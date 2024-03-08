@@ -1,0 +1,29 @@
+
+function solve(int n){
+
+for(let i = 0; i < n; i++){
+     for(int j=0; j < i / 2; j++){
+// 0(1) operation
+}
+}
+}
+
+
+*)The outer loop runs `n` times
+*)For each iteration of the outer loop, the inner loop runs `i / 2` times
+
+ i     j         noi(number of iteration)
+ 0    [0,0]      1
+ 1    [1,1/2]    2
+ 2    [2,2/2]    3
+ '       '       '
+ '       '       '
+ '       '       '
+n      n/2
+
+
+time complexity = n*n/2
+                = n^2
+                 
+
+ The time complexity  is O(n^2).

@@ -1,0 +1,26 @@
+let a = 0, i = N;
+
+while (i > 0) {
+    a += i;
+    i /= 2;
+}
+
+
+i=N   1st iteration
+i=n/2  2nd iteration
+i=n/4  3rd iteration
+''''' so on 
+until i becomes less than or equal to 0.
+
+ex N=16
+i=16   1st iteration
+i=8    2nd iteration
+i=4    3rd iteration
+i=2    4th iteration
+i=1    5th iteration
+i=0    6th iteration
+
+ log2(16)=4
+  which is the exponent we raised 2 to get N
+
+  time complexity is  O(log N). (i=i/2)

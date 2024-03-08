@@ -1,0 +1,25 @@
+function solve(n){
+    let i=1
+    while(i<n){
+        let x =i
+        while(x--){
+            o(1)
+        }
+        i++
+    }
+}
+let n =5 
+outer loop  starts with i=1 1<5 x=1
+inner loop  x starts with the same value as i.
+Decreases x by 1 for each iteration.
+
+i=1 x=1
+i=2 x=2
+i=3 x=3---
+and so on
+
+ outer loop runs n-1 times because starts with i=1 and upto i = n-1
+ and inner loop runa i time  means n times 
+  son time complexity become 
+  =(n - 1) * n / 2
+  = O(n^2)

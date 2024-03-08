@@ -1,0 +1,29 @@
+function solve(n)
+{
+
+let i = n while(i>0)
+
+{ if(i%2 == 0)
+
+{ for(let j = 1; j <= n*n; j+=2)
+
+{
+statements
+}
+}
+i/=2
+}
+}
+
+
+let n=6
+i=6 , 6>0, 6%2==0, j=1,1<=36  1st iteration
+i=6/2=3, 3>0,3%2==0, false    2nd iteration
+i=3/2=1.5 1.5>0, 1.5%2==0 false  3rd iteration
+i=1.5/2=0.75  which is less than 0 so loop terminates 
+
+
+So The nested for loop runs n * n / 2 time
+The outer loop runs until i becomes less than or equal to 0, which takes approximately log₂(n) iterations (i=i/2)
+(n * n / 2) * log₂(n)
+total time complexity= O(n² log n)
