@@ -1,0 +1,73 @@
+ 
+ 
+    Functions 
+	
+	  reusable piece of statements to perform specific tasks and return output
+	  syntax:
+	   functionkeyword  functionname{
+		//statement1
+		//statement2
+	   }
+	   
+	    example1:
+         function area( r){
+           return 3.142*r*r;
+          }
+         let areaofcircle=area(8);
+         console.log(areaofcircle);
+         //output : 201.088
+		 
+		example2:
+         //finding maximum of array 
+         function maxOFarray(array) {
+         let max = array[0];
+         for (let i = 1; i < array.length; i++) {
+           if (array[i] > max) {
+            max = array[i];
+           }
+         }
+         return max;
+        }
+        let numbers = [5, 0, -1, 6, 10];
+        let maxno = maxOFarray(numbers);
+        console.log(maxno);
+        //output :10
+		
+		example 3:
+		 //finding 2 nd maximum of array
+         function secondmaximum(array) {
+           let max = -Infinity;
+           let secondmax = -Infinity;
+           for (let i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+             secondmax = max;
+             max = array[i];
+            }
+            else if (array[i] > secondmax && array[i] !== max) {
+             secondmax = array[i];
+            }
+           }
+          return secondmax;
+         }
+         let numbers = [5, 0, -1, 6, 10];
+         let secmax = secondmaximum(numbers);
+         console.log(secmax);
+         //output : 6
+		 
+        example 4:
+          //finding minimum of array
+          function minimum(array) {
+           let min = array[0];
+           for (let i = 0; i < array.length; i++) {
+              if (array[i] < min) {
+                min = array[i];
+              }
+            }
+           return min;
+          }
+         let numbers = [5, 0, -1, 6, 10];
+         let minimumofarray = minimum(numbers);
+         console.log(minimumofarray);
+         //output: -1		 
+
+	   

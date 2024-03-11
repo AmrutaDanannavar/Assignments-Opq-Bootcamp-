@@ -1,0 +1,141 @@
+       
+	Actions on the data 
+	
+	 Arithmetic operators:
+	  
+	  1) Addition (+):                                             
+	   let sum = 5 + 3; // sum will be 8
+      2)Subtraction (-): 
+	   let difference = 10 - 4; // difference will be 6
+      3)Multiplication (*):
+	   let product = 2 * 6; // product will be 12
+	  4)Division (/): 
+	    let quotient = 8 / 4; // quotient will be 2
+      5)Modulus (%):
+	    let remainder = 10 % 3; // remainder will be 1
+      6)Increment (++): 
+	     let num = 5;
+            num++; // num will be 6 after this operation
+	  7)Decrement (--):
+	     let num = 5;
+          num--; // num will be 4 after this operation
+	  8)Exponentiation (**):
+	     let result = 2 ** 3; // result will be 8
+
+     Assignment Operators:
+	 
+	   1. Addition (+): 
+         let sum = 5 + 3; // sum will be 8
+       2. Subtraction (-): 
+         let difference = 10 - 4; // difference will be 6
+       3. Multiplication (*): 
+         let product = 2 * 6; // product will be 12
+       4. Division (/): 
+         let quotient = 8 / 4; // quotient will be 2
+       5. Modulus (%): 
+         let remainder = 10 % 3; // remainder will be 1
+       6. Increment (++): 
+         let num = 5;
+          num++; // num will be 6 after this operation
+       7. Decrement (--): 
+          let num = 5;
+           num--; // num will be 4 after this operation
+       8. Exponentiation (**): 
+          let result = 2 ** 3; // result will be 8
+		   
+
+     Comparison Operators:
+
+    1.Equal (==): 
+     console.log(5 == 5); // true
+     console.log(5 == '5'); // true
+    2.Not Equal (!=): 
+     console.log(5 != 3); // true
+     console.log(5 != '5'); // false
+    3.Strict Equal (===): 
+     console.log(5 === 5); // true
+     console.log(5 === '5'); // false
+    4.Strict Not Equal (!==): 
+     console.log(5 !== 3); // true
+     console.log(5 !== '5'); // true
+    5.Greater Than (>): 
+     console.log(5 > 3); // true
+    6.Less Than (<): 
+     console.log(5 < 3); // false
+    7.Greater Than or Equal To (>=):
+     console.log(5 >= 5); // true
+    8.Less Than or Equal To (<=):
+     console.log(5 <= 3); // false
+	 
+	  Logical Operators:
+
+    1.Logical AND (&&):
+     console.log(true && true); // true
+     console.log(true && false); // false
+    2.Logical OR (||):
+     console.log(true || false); // true
+     console.log(false || false); // false
+    3.Logical NOT (!):
+     console.log(!true); // false
+     console.log(!false); // true
+
+   Conditional statements (if,else, elseif):
+   ex1://finding positive number 
+    let a = 10;
+    if (a > 0) {
+     a++;
+     console.log(a);
+    }
+    else {
+     a--
+     console.log(a);
+    }
+    //output :11
+	
+	ex2://max of three numbers
+     a = 10;
+     b = 3;
+     c = 12;
+    if (a >= b && a >= c) {
+       console.log(a);
+    }
+    else if (b >= a && b >= c) {
+       console.log(b);
+    }
+    else {
+     console.log(c);
+    }
+    //output :12
+	
+	ex3://min of three numbers
+	 a = 10;
+     b = 3;
+     c = 12;
+     if (a <= b && a <= c) {
+       console.log(a);
+     }
+     else if (b <= a && b <= c) {
+       console.log(b);
+     }
+     else {
+      console.log(c);
+     }
+    //output:3
+
+   ex4://finding odd or even
+    let a = 11;
+    if (a % 2 == 0) {
+      console.log("even");
+    }
+    else {
+      console.log("odd");
+    }
+   //output:odd	
+   
+
+
+   
+
+
+
+

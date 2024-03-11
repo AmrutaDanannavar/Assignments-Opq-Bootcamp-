@@ -1,0 +1,30 @@
+
+Git classe
+ git is vcs(version control system)
+  
+  3 types of vcs
+   1.Local vcs (only you have access)
+   
+   2.Centralized vcs ( remote access )
+   
+   3.Distributed vcs (both local and centralized)
+   
+   git commands 
+   1.creating file : touch "filrname"
+   
+   2.creating folder : mkdir "foldername"
+   
+   3.deleting file :rm "filrname"
+   
+   4.deleting folder : rm -rf "foldername"
+   
+   5.Initialize a new Git repository in the current directory: git init
+   
+   6.adding file: git add filrname
+   
+   7.commiting : git commit -m "message"
+   
+   8.commit id: git log 
+   
+   9. Display the status of the working directory and staging area:git status
+   

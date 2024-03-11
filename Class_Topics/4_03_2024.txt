@@ -1,0 +1,25 @@
+  
+  
+   time and space complexity 
+   
+   
+   time complexity : amount of time it takes for a program to complete its execution.
+   
+   space complexity : amount of memory used by a program during its execution.
+   
+    1. O(1) - Constant Time Complexity
+	2. O(n) - Linear Time Complexity
+	3. O(log n) - Logarithmic Time Complexity
+	4. O(n^2) - Quadratic Time Complexity 
+	
+	big O notation says 
+	1.ignore lower orders terms
+	2.ignore  constants
+	3.ignore coefficients 
+	
+	
+	ex : time complexity of n^3+n^2+n+1 
+	     is 
+		 O(n^3)
+		 
+		 

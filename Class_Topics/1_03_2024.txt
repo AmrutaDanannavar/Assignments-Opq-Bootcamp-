@@ -1,0 +1,21 @@
+ 
+ 
+    Git branching 
+	 *) discussion of branching strategy 
+	 
+	 *) discussion of producction system 
+	  
+	 *) usage of develop/int branch 
+	 
+	 *) merging of developer branches with master/main branch 
+
+     *) hotfix branch -  miner testing will be happen in this branch
+   
+    
+     *) creating  github account 
+   
+     *) creating new repository
+  
+     *) creating pull request 
+
+     *) pushing files to repository	 

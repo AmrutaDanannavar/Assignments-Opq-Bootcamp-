@@ -1,0 +1,34 @@
+  
+  
+  
+Git Reset : used to reset the changes 
+  
+  3 types of git reset 
+  
+  1.soft - git reset --soft HEAD-2
+  2.hard - git reset --hard HEAD-2
+  3.mixed - git reset --mixed HEAD-2
+  
+  
+  *)soft - it will move the commited files to staging area
+  
+  *)hard - hard will delete all last created files
+  
+  *)mixed - it will move commited files to working area
+  
+  
+Git revert : it will revert the changes.
+
+   1.git revert commit id
+   
+   2.git cherry-pick commit id - for merging a particular commit id/ file.
+   
+   git merge - after git merge commit id of all files does not changes 
+                but a new commit id will be created.
+				
+   git rebase - after rebase commit id of last created files will be changed				
+   
+   
+  
+  
+  

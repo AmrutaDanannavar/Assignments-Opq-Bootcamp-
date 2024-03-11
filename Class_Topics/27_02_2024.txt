@@ -1,0 +1,16 @@
+ 
+  Branching in git
+   1.git branch branchname - command for creating branch
+   
+   2.git checkout branchname - command for switching branch
+   
+   3.git checkout -b branchname - command for both creatingand switching
+   
+   4.git branch - command for listing branch names
+   
+   5.git merge - command for  adding all commits and files to master branch
+   
+   6.git stash - command for temporary save 
+   
+   7.git stash pop -  command for throws the changes 
+    

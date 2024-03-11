@@ -1,0 +1,34 @@
+ 
+  
+  Space Complixity
+  
+   amount of memory used by program during execution called space complexity 
+   
+   ex 1)
+   function f1(m,n){
+   let sum = 5   ------------consumes constant memory c0
+   let name="opq tech"--------- consumes constant memory c1
+   let arr1=[] ---------------- c2*n
+   let arr2=[]-----------------c3*m
+   for(i=0;i<n;i++){
+    arr1.push[i]
+   for(j=0;j<m;j++){
+    arr.push[j]
+    }
+  }
+}
+
+consider variable other than arguments like m&n
+ total space complexity is O(c0+c1+c2*n+c3*m) = O(m+n)
+ 
+ Cumulative array  
+  if arr= [-3,2,5,6,7,8,9,-1]
+  then cumarr= [-3,-1,4,10,17,25,34,33]
+  
+  cum arr[i] = { arr[i]+cuumarr[i-1] if i >0 }
+  
+  cum arr[i] = { arr[0]   if i=0
+
+
+   
+	

@@ -1,0 +1,43 @@
+      
+	Introduction to javascript 
+
+      In the first class definition of program and some basics 
+	  of javascript programing language are discussed 
+       1) program : 
+	        Set of instructions written using a programing language to accomplish some tasks.
+	 
+	   2) Data Storage :
+	        Data storage refers to the mechanisms and structures used to store and manage
+			data within a program or application.
+			
+	   3) javascript :
+            javascript is scripting language used to create and control dynamic website content .
+         
+         *) variables: helps to store data 
+		  variables are declared using the var, let, or const.
+		   
+		  Types of variables:
+		   1.Numbers
+		   2.Strings
+		   3.Boolean
+		   4.Array
+		   5.Object
+         		
+	 example:
+	   1) var num = 10;
+          console.log(num); // Output: 10
+		
+	   2) var str = "Hello, World!";
+          console.log(str); // Output: Hello, World!
+
+       3) var isTrue = true;
+          console.log(isTrue); // Output: true
+		 
+       4) var arr = [1, 2, 3, 4, 5];
+          console.log(arr); // Output: [1, 2, 3, 4, 5]
+		  
+	   5) var obj = { name: "John", age: 30 };
+          console.log(obj); // Output: { name: "John", age: 30 }
+	  
+		 
+		 
