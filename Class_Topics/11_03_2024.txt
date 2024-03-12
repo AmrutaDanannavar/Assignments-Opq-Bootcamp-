@@ -1,0 +1,163 @@
+ 
+ 
+  advantages of cumulative array 
+  
+  
+  ex 1)
+  // finding sum of each range 
+  function findSumInRange(arr, ranges) {
+    // Create cumulative sum array
+    let cumulativeSum = [0];
+    for (let i = 0; i < arr.length; i++) {
+        cumulativeSum[i + 1] = cumulativeSum[i] + arr[i];
+    }
+
+    // Calculate sum for each range
+    let result = [];
+    for (let i = 0; i < ranges.length; i++) {
+        let start = ranges[i][0];
+        let end = ranges[i][1];
+        result.push(cumulativeSum[end + 1] - cumulativeSum[start]);
+    }
+
+    return result;
+}
+
+// Test the function
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const ranges = [[0, 3], [2, 4], [4, 6]];
+console.log(findSumInRange(array, ranges)); // Output: [10, 12, 18]
+
+ex 2) 
+//equilibrium index
+function findEquilibriumIndices(arr) {
+    const n = arr.length;
+    const cumulativeSum = [0];
+    let totalSum = 0;
+
+    // Calculate cumulative sum
+    for (let i = 0; i < n; i++) {
+        totalSum += arr[i];
+        cumulativeSum.push(totalSum);
+    }
+
+    const equilibriumIndices = [];
+
+    // Check for equilibrium index
+    for (let i = 0; i < n; i++) {
+        const leftSum = cumulativeSum[i];
+        const rightSum = totalSum - leftSum - arr[i];
+
+        if (leftSum === rightSum) {
+            equilibriumIndices.push(i);
+        }
+    }
+
+    return {
+        indices: equilibriumIndices,
+        count: equilibriumIndices.length
+    };
+}
+
+// Test the function
+const array = [-7, 1, 5, 2, -4, 3, 0];
+const result = findEquilibriumIndices(array);
+console.log("Equilibrium Indices:", result.indices); // Output: [3, 6]
+console.log("Count of Equilibrium Indices:", result.count); // Output: 2
+
+ex3)
+//cumulative even and cumulative odd 
+function cumulativeEvenOddArray(arr) {
+    const n = arr.length;
+    let cumulativeEven = [0];
+    let cumulativeOdd = [0];
+    let evenSum = 0;
+    let oddSum = 0;
+
+    for (let i = 0; i < n; i++) {
+        if (arr[i] % 2 === 0) {
+            evenSum += arr[i];
+        } else {
+            oddSum += arr[i];
+        }
+        cumulativeEven.push(evenSum);
+        cumulativeOdd.push(oddSum);
+    }
+
+    return {
+        cumulativeEven,
+        cumulativeOdd
+    };
+}
+
+// Test the function
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const result = cumulativeEvenOddArray(array);
+console.log("Cumulative Even Array:", result.cumulativeEven);
+console.log("Cumulative Odd Array:", result.cumulativeOdd);
+
+ex 4)
+// count of special index
+
+function countSpecialIndices(arr) {
+    let count = 0;
+    let cumulativeEven = 0;
+    let cumulativeOdd = 0;
+
+    // Calculate cumulative sums of even and odd indexed elements
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 === 0) {
+            cumulativeEven += arr[i];
+        } else {
+            cumulativeOdd += arr[i];
+        }
+    }
+
+    // Reset cumulative sums and check for special indices
+    cumulativeEven = 0;
+    cumulativeOdd = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 === 0) {
+            cumulativeEven += arr[i];
+        } else {
+            cumulativeOdd += arr[i];
+        }
+
+        // If cumulative sums of even and odd indices are equal, increment count
+        if (cumulativeEven === cumulativeOdd) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+// Example usage:
+const array = [1, 2, 3, 4, 5, 6];
+console.log("Count of special indices:", countSpecialIndices(array)); // Output: 1 (index 2 is special)
+
+ex5)
+// find count of pairs
+function findPairs(s) {
+    const pairs = [];
+    const len = s.length;
+
+    for (let i = 0; i < len; i++) {
+        if (s[i] === 'a') {
+            for (let j = i + 1; j < len; j++) {
+                if (s[j] === 'g') {
+                     pairs.push([s[i], s[j]]);
+                }
+            }
+        }
+    }
+
+    return pairs;
+}
+
+// Example usage:
+const array= ['a','b','g','a','h','g'];
+const pairs = findPairs(array);
+console.log("Count of pairs:", pairs.length);
+console.log("Pairs:", pairs);
+ 
