@@ -1,0 +1,44 @@
+
+ex1)
+count of leaders 
+
+ a element is said to be leader if that element is greater than  all the elements on the right of it
+ 
+ function countLeaders(arr) {
+    let count = 1;
+    let maxRight = arr[arr.length - 1];
+
+    // Traverse the array from right to left
+    for (let i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] > maxRight) {
+            maxRight = arr[i];
+            count++;
+        }
+    }
+
+    return count;
+}
+
+// Example usage:
+const arr = [5,7,6,1,-1,0,5,2];
+console.log("Number of leaders:", countLeaders(arr));// output :4
+
+ sub array : It is continuous part of an array with same order 
+ 
+ ex: arr = [2,3,4,5,6]
+  sub array is 
+  [2] [2,3] [2,3,4] [2,3,4,5] [2,3,4,5,6]
+  [3] [3,4] [3,4,5] [3,4,5,6]
+  [4] [4,5] [4,5,6]
+  [5] [5,6]
+  [6] 
+  
+  
+  1 ) individual element  is a subarray
+  2 ) entire array is a subarray
+  3 ) empty element is not a sub array
+  
+  
+  given an array of length Number then number  of subarray = N(N+1) / 2
+  
+ 
