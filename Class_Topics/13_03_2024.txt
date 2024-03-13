@@ -1,0 +1,51 @@
+ ex 1)
+ // printing sum of all sub array
+ function sumOfAllSubarrays(arr) {
+    let totalSum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let subArraySum = 0;
+        for (let j = i; j < arr.length; j++) {
+            subArraySum += arr[j];
+            totalSum += subArraySum;
+        }
+    }
+    return totalSum;
+}
+
+
+const array = [1, 2, 3];
+console.log(sumOfAllSubarrays(array)); // Output: 20
+
+ex 2)
+// max sub array sum 
+function maxSubArraySum(arr) {
+    let maxEndingHere = arr[0]; //track the maximum sum of sub arraythat end at the current position 
+    let maxSoFar = arr[0];// maximum sum of subarray seen so far during iteration 
+
+    for (let i = 1; i < arr.length; i++) {
+        maxEndingHere = Math.max(arr[i], maxEndingHere + arr[i]);
+        maxSoFar = Math.max(maxSoFar, maxEndingHere);
+    }
+
+    return maxSoFar;
+}
+
+const array = [1,2,3];
+console.log(maxSubArraySum(array)); // Output: 6
+
+ex 3) 
+// min sub array sum
+function minSubArraySum(arr) {
+    let minEndingHere = arr[0]; //track the minimum sum of sub arraythat end at the current position 
+    let minSoFar = arr[0];// minimum sum of subarray seen so far during iteration 
+
+    for (let i = 1; i < arr.length; i++) {
+        minEndingHere = Math.min(arr[i], minEndingHere + arr[i]);
+        minSoFar = Math.min(minSoFar, minEndingHere);
+    }
+
+    return minSoFar;
+}
+const array = [1,2,3];
+console.log(minSubArraySum(array)); // Output: 1
+
