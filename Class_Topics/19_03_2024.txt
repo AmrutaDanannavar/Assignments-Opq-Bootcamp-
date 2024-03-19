@@ -1,0 +1,58 @@
+Recursion : function calling itself 
+
+ we are calling the function itself because solving bigger problems by 
+ making them smaller same problems so it is become easy ..
+ 
+ how to write recursion code:
+  1: assumption - coming up with a function and assuming it works
+  2: main logic - solve the assumption with subproblem
+  3: base case  - when should your code stop 
+  
+   ex 1:
+   // find sum from 1 to  N  using recursion
+function sumOfN(n) {
+   
+    if (n === 0) {
+        return 0;
+    }
+    else {
+        return n + sumOfN(n - 1);
+    }
+}
+
+const n = 5;
+const sum = sumOfN(n);
+console.log("Sum of first", n, "natural numbers:", sum); // output :15
+
+ex 2:
+// finding factorial of n numbers using recursion
+function factorial(n) {
+    
+    if (n === 0) {
+        return 1;
+    }
+    else {
+        return n * factorial(n - 1);
+    }
+}
+const n = 5;
+const fact = factorial(n);
+console.log(fact);//output :120
+
+ex 3:
+// fibonacci series using recursion 
+function fibonacci(a, b, n) {
+    if (n === 0) {
+        return a;
+    }
+    
+    console.log(a);
+   
+    return fibonacci(b, a + b, n - 1);
+}
+const a = 0;
+const b = 1;
+const n = 5;
+console.log("Fibonacci series:");
+fibonacci(a, b, n); // output : 0,1,1,2,3
+   
