@@ -1,0 +1,74 @@
+
+ * )Whenever javascript program executes execusion context will be created.
+ * )Execusion context  will wrap up the all the environment which is required 
+    for the execusion of piece of code.
+ * ) execusion context contains 
+     1)Memory allocation
+	 2)Real Code Execution
+ *) Execusion context are created for many function call and entry of the same 
+    is made into call stack.
+ *) The first execusion context entry is called as global execusion context.
+
+ example :
+ let n1= 5;
+ let n2= 4;
+ function multiply(a,b){
+  retuen a*b;
+  }
+  let output= multiply(n1,n2);
+  console.log(output);
+
+ memory allocation - n1&n2 and output variables are undefined but multiply 
+ function variable is defined
+ code execution - n1 =5,n2=4,and output=20
+ 
+ Difference between "Let" and "Var" key words
+ 
+  *)Variables declared with var are function-scoped. This means that they 
+    are visible throughout the function in which they are declared, regardless 
+    of block scope.
+  
+  *) Variables declared with let are block-scoped. This means that they are
+     only visible within the block in which they are declared, such as a loop
+     or an if statement block
+  
+  *) Variables declared with var are hoisted to the top of their function or 
+     global scope and are initialized with undefined. This means that you can
+	 access the variable before it's declared in the code.
+	 
+  *) Variables declared with let are also hoisted, but they are not initialized
+     until the interpreter reaches their declaration in the code. Accessing a let
+	 variable before its declaration will result in a ReferenceError.
+	
+  *) Variables declared with var can be re-declared within the same scope without any error.
+  
+  *) Variables declared with let cannot be re-declared within the same scope. Attempting to 
+     do so will result in a SyntaxError.
+
+ example:
+ // Using var
+function exampleVar() {
+    if (true) {
+        var x = 10;
+    }
+    console.log(x); // Outputs: 10, var is function-scoped
+}
+exampleVar();
+
+// Using let
+function exampleLet() {
+    if (true) {
+        let y = 20;
+    }
+    console.log(y); // Throws a ReferenceError: y is not defined, let is block-scoped
+}
+exampleLet();
+
+// Redefining var
+var a = 5;
+var a = 10;
+console.log(a); // Outputs: 10, no error, var allows re-declaration
+
+// Redefining let
+let b = 5;
+// let b = 10; // SyntaxError: Identifier 'b' has already been declared, let doesn't allow re-declaration
