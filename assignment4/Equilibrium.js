@@ -14,7 +14,7 @@ function findEquilibriumIndices(arr) {
 
     // Check for equilibrium index
     for (let i = 0; i < n; i++) {
-        const leftSum = cumulativeSum[i];
+        const leftSum = cumulativeSum[i];//[ 0, -7, -6, -1, 1, -3 ]
         const rightSum = totalSum - leftSum - arr[i];
 
         if (leftSum === rightSum) {
