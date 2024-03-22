@@ -1,0 +1,56 @@
+
+oops : object oriented programming 
+
+  *)It is all about organizing code especially how  to create  complex variables 
+  and define function which acts on them.
+  
+  *) Class is a blueprint to organize the input data or class is logical entry
+     that contains same attributes and methods .
+	 class is collection of object 
+	 
+  example :
+  
+  
+class Employee {
+   
+    constructor(name, id, department, salary) {
+      this.name = name;
+      this.id = id;
+      this.department = department;
+      this.salary = salary;
+    }
+  
+   
+    displayInfo() {
+      console.log(`Name: ${this.name}`);
+      console.log(`ID: ${this.id}`);
+      console.log(`Department: ${this.department}`);
+      console.log(`Salary: ${this.salary}`);
+    }
+  }
+  
+  
+  const employee1 = new Employee("Manu", 1001, "Engineering", 60000);
+  const employee2 = new Employee("Janu", 1002, "Marketing", 55000);
+  
+
+  console.log("Employee 1 Information:");
+  employee1.displayInfo();
+  
+
+  console.log("\nEmployee 2 Information:");
+  employee2.displayInfo();
+  
+  //output
+// Employee 1 Information:
+// Name: Manu
+// ID: 1001
+// Department: Engineering
+// Salary: 60000
+
+// Employee 2 Information:
+// Name: Janu
+// ID: 1002
+// Department: Marketing
+// Salary: 55000
+  
