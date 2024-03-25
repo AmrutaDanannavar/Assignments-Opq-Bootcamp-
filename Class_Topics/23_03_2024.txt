@@ -1,0 +1,48 @@
+class BankAccount{
+    constructor(name,acc_num,IFSC,branch,balance){
+        this.name=name;
+        this.acc_num=acc_num;
+        this.IFSC=IFSC;
+        this.branch=branch;
+        this.balance=balance;
+
+    }
+    credit(amount){
+        this.balance=this.balance+amount;
+        console.log(`balance is :${this.balance}`);
+    }
+    debit(amount){
+        if(this.balance>amount){
+            this.balance=this.balance-amount;
+            console.log(`Amount debited is :${amount} and Availabel balance is :${this.balance}`);
+            
+        }
+        else{
+            console.log(`Insufficient balance`);
+        }
+    }
+    checkbalance(){
+        console.log(`balance is :${this.balance}`);
+    }
+
+}
+class SavingsAccount extends BankAccount{ // child class which inherits the properties of parent class i.e bankaccount
+    constructor(name,acc_num,IFSC,branch,balance){
+        super(name,acc_num,IFSC,branch,balance)
+        this.interest=6;
+
+    }
+}
+
+let myAccount = new BankAccount("Ram",5142123658944,"ICEF086","Mudhol",5000);
+console.log(myAccount);
+myAccount.checkbalance();
+myAccount.credit(1200);
+myAccount.debit(7000);
+myAccount.debit(5000);
+//methods inhertied from parent class
+let mysavings= new SavingsAccount("Sham",561242123658944,"ICEF089","Belagum",15000);
+console.log(mysavings);
+mysavings.checkbalance();
+mysavings.credit(5000);
+mysavings.debit(7000);
