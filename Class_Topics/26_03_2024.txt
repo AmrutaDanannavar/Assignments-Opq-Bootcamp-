@@ -1,0 +1,150 @@
+
+  Stacks and Queues  Datastructures 
+  
+  Stacks  : It is datastructure that works in Last in first out manner 
+   it supports :
+   1. push : allowing elements add at end 
+   2. pop  : removing elements from top 
+   3. peek : to get the front element without removing 
+ 
+ Example :
+  class Stack {
+    constructor() {
+      this.size = 3;
+      this.items = [];
+      this.top = -1;
+    }
+  
+    push(element) {
+      if (this.isFull()) {
+        console.log("Stack is full. Cannot push element:", element);
+        return;
+      }
+      this.items[++this.top] = element;
+      console.log("Pushed element:", element);
+    }
+  
+    pop() {
+      if (this.isEmpty()) {
+        console.log("Stack is empty. Cannot pop element.");
+        return;
+      }
+      return this.items[this.top--];
+    }
+  
+    isEmpty() {
+      return this.top === -1;
+    }
+
+    isFull() {
+      return this.top === this.size - 1;
+    }
+  
+    print() {
+        const stackElements = this.items.slice(0, this.top + 1);
+        console.log(stackElements.toString());
+    }
+  }
+
+ 
+const stack = new Stack();
+
+stack.push(10);
+stack.push(20);
+stack.push(30);
+stack.push(40);
+console.log("Stack elements:");
+stack.print();
+
+console.log("Popped element:", stack.pop()); 
+console.log("Popped element:", stack.pop()); 
+
+console.log("Stack elements after pop:");
+stack.print(); 
+
+output :
+Pushed element: 10
+Pushed element: 20
+Pushed element: 30
+Stack is full. Cannot push element: 40
+Stack elements:
+10,20,30
+Popped element: 30
+Popped element: 20
+Stack elements after pop:
+10
+
+  Queues  : It is datastructure that works in First in first out manner 
+   it supports :
+   1.Enqueue : Add element at end of queue 
+   2.Dequeue : Remove an element from the front of queue.
+   3.Peek    : to get the front element without removing 
+  
+ Example:  
+ class Queue {
+    constructor() {
+      this.size = 3;
+      this.items = [];
+    }
+  
+    enqueue(element) {
+      if (this.isFull()) {
+        console.log("Queue is full. Cannot enqueue element:", element);
+        return;
+      }
+      this.items.push(element);
+      console.log("enqueued  element:", element);
+    }
+  
+    dequeue() {
+        if (this.isEmpty()) {
+            console.log("Queue is empty");
+        }
+        return this.items.shift();
+      }
+  
+    isEmpty() {
+      return this.items.length === 0;
+    }
+
+    isFull() {
+      return this.items.length === this.size ;
+    }
+  
+    print() {
+        // const stackElements = this.items.slice(0, this.top + 1);
+        // console.log(stackElements.toString());
+        console.log(this.items.toString());
+    }
+  }
+
+ 
+const queue = new Queue();
+
+queue.enqueue(10);
+queue.enqueue(20);
+queue.enqueue(30);
+queue.enqueue(40);
+console.log("Queue  elements:");
+queue.print();
+
+console.log("Dequeue element:", queue.dequeue()); 
+console.log("Dequeue  element:", queue.dequeue()); 
+
+console.log("Queue  elements after Dequeue :");
+queue.print(); 
+
+ output
+enqueued  element: 10
+enqueued  element: 20
+enqueued  element: 30
+Queue is full. Cannot enqueue element: 40
+Queue  elements:
+10,20,30
+Dequeue element: 10
+Dequeue  element: 20
+Queue  elements after Dequeue :
+30
+ 
+  
+   
