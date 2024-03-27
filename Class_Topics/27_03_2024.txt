@@ -1,0 +1,191 @@
+Trees :  
+ Trees are a common data structure in computer science and are frequently used in JavaScript for tasks like organizing hierarchical data, representing document structures, or implementing algorithms like binary search trees.
+ 
+ Here are some key characteristics of trees:
+
+Root: The topmost node of the tree from which all other nodes are descendants. It is the entry point into the tree data structure.
+
+Nodes: Each element within a tree is called a node. Nodes can have zero or more child nodes, depending on the type of tree.
+
+Edges: The connections between nodes are called edges. These edges represent relationships or associations between nodes.
+
+Parent and Child Nodes: In a tree, nodes are organized in a parent-child relationship. A node is considered a parent if it has one or more child nodes directly connected to it. Conversely, a child node is connected to its parent node via an edge.
+
+Leaf Nodes: Nodes that have no children are called leaf nodes or terminal nodes. They are the endpoints of branches in the tree.
+
+Internal Nodes: Nodes that have one or more child nodes are called internal nodes. These nodes are not leaf nodes.
+
+Height of node: In the context of trees, the height of a node refers to the length of the longest path from that node to a leaf node
+
+Binary tree :
+A binary tree is a hierarchical data structure consisting of nodes, where each node has at most two children, referred to as the left child and the right child.
+
+example:
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+const root = new Node(1);
+root.left = new Node(5);
+root.right = new Node(6);
+root.right.left = new Node(7);
+root.right.right = new Node(8);
+
+console.log("Root Node:", root.data);
+console.log("Left Child Node:", root.left.data);
+console.log("Right Child Node:", root.right.data);
+console.log("Left Child Node of Right:", root.right.left.data);
+console.log("Right Child Node of Right:", root.right.right.data);
+//output
+Root Node: 1
+Left Child Node: 5
+Right Child Node: 6
+Left Child Node of Right: 7 
+Right Child Node of Right: 8
+
+Tree traversal of Binarytree 
+1) Inorder : leftNode(LN)->ParentNode(PN)->RightNode(RN)
+example:
+
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+function inOrderTraversal(node) {
+    if (node !== null) {
+        inOrderTraversal(node.left); // Traverse the left subtree
+        console.log(node.data); // Visit the current node
+        inOrderTraversal(node.right); // Traverse the right subtree
+    }
+}
+
+const root = new Node(1);
+root.left = new Node(5);
+root.right = new Node(6);
+root.right.left = new Node(7);
+root.right.right = new Node(8);
+
+console.log("Root Node:", root.data);
+console.log("Left Child Node:", root.left.data);
+console.log("Right Child Node:", root.right.data);
+console.log("Left Child Node of Right:", root.right.left.data);
+console.log("Right Child Node of Right:", root.right.right.data);
+
+console.log("In-Order Traversal:");
+inOrderTraversal(root);
+
+//output
+Root Node: 1
+Left Child Node: 5
+Right Child Node: 6
+Left Child Node of Right: 7 
+Right Child Node of Right: 8
+In-Order Traversal:
+5
+1
+7
+6
+8
+
+2)Preorder : PN->LN->RN
+
+example:
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+function preOrderTraversal(node) {
+    if (node !== null) {
+        console.log(node.data); // Visit the current node
+        preOrderTraversal(node.left); // Traverse the left subtree
+        preOrderTraversal(node.right); // Traverse the right subtree
+    }
+}
+
+const root = new Node(1);
+root.left = new Node(5);
+root.right = new Node(6);
+root.right.left = new Node(7);
+root.right.right = new Node(8);
+
+console.log("Root Node:", root.data);
+console.log("Left Child Node:", root.left.data);
+console.log("Right Child Node:", root.right.data);
+console.log("Left Child Node of Right:", root.right.left.data);
+console.log("Right Child Node of Right:", root.right.right.data);
+
+console.log("Pre-Order Traversal:");
+preOrderTraversal(root);
+
+//output
+Root Node: 1       
+Left Child Node: 5 
+Right Child Node: 6
+Left Child Node of Right: 7 
+Right Child Node of Right: 8
+Pre-Order Traversal:        
+1
+5
+6
+7
+8
+
+3)Postorder : LN->RN->PN
+
+example:
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+function postOrderTraversal(node) {
+    if (node !== null) {
+        postOrderTraversal(node.left); // Traverse the left subtree
+        postOrderTraversal(node.right); // Traverse the right subtree
+        console.log(node.data); // Visit the current node
+    }
+}
+
+const root = new Node(1);
+root.left = new Node(5);
+root.right = new Node(6);
+root.right.left = new Node(7);
+root.right.right = new Node(8);
+
+console.log("Root Node:", root.data);
+console.log("Left Child Node:", root.left.data);
+console.log("Right Child Node:", root.right.data);
+console.log("Left Child Node of Right:", root.right.left.data);
+console.log("Right Child Node of Right:", root.right.right.data);
+
+console.log("Post-Order Traversal:");
+postOrderTraversal(root);
+
+//output
+Root Node: 1       
+Left Child Node: 5 
+Right Child Node: 6
+Left Child Node of Right: 7 
+Right Child Node of Right: 8
+Post-Order Traversal:       
+5
+7
+8
+6
+1
+
