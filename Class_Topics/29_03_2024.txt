@@ -1,0 +1,72 @@
+Binary search 
+  
+ Binary search is a search algorithm used to find the position 
+ of a target value within a sorted array
+  
+  ex : A=[0,-5,1,10,7,6,3]
+   sorted A=[-5,0,1,3,6,7,10]
+   
+   
+  1. Mid = (startindex(S)+endIndex(E) / 2 )
+  
+  2. Comparesion : 
+     Search Element < A[Mid] => Left Part(LP)
+	 Search Element > A[Mid] => Right Part(RP)
+	 
+	 Example :
+     
+function binarySearch(arr, target, start = 0, end = arr.length - 1) {
+    if (start > end) {
+        return -1; // Element not found
+    }
+
+    const mid = Math.floor((start + end) / 2);
+
+    if (arr[mid] === target) {
+        return mid; // Element found
+    } else if (arr[mid] < target) {
+        return binarySearch(arr, target, mid + 1, end); // Search right half
+    } else {
+        return binarySearch(arr, target, start, mid - 1); // Search left half
+    }
+}
+
+const arr = [-5,0,1,3,6,7,10,18];
+const target = 7;
+const index = binarySearch(arr, target);
+console.log("Index of", target, ":", index);//Index of 7 : 5
+
+
+Subsequences : It is similar to subarray but It demands order not continuity.
+*)All subarray are Subsequences but not all Subsequences are subarray.
+ 
+     Example:
+	 function getSubsequences(array) {
+    const subsequences = [];
+
+    function generateSubsequences(current, index) {
+        if (index === array.length) {
+            subsequences.push(current);
+            return;
+        }
+
+        // Include the current element
+        generateSubsequences([...current, array[index]], index + 1);
+
+        // Exclude the current element
+        generateSubsequences(current, index + 1);
+    }
+
+    generateSubsequences([], 0);
+
+    return subsequences;
+}
+
+const array = [5,7,8,9,10];
+const subsequences = getSubsequences(array);
+console.log(subsequences);
+
+
+Subset : It does not care for neither order nor continuity.
+     Example:
+	 
