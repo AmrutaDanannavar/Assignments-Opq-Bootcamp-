@@ -1,0 +1,67 @@
+
+Database: 
+A database is a structured collection of data that is organized and stored electronically.
+
+types of database:
+
+1.Relational Databases (RDBMS)
+2.NoSQL Databases
+
+difference between RDBMS and NoSQL database
+
+RDBMS:
+*)Relational databases organize data into tables with rows and columns.
+*)RDBMS: Relational databases are commonly used in traditional business 
+  applications, such as finance, ERP (Enterprise Resource Planning), CRM 
+ (Customer Relationship Management), and OLTP (Online Transaction Processing) 
+  systems.
+*) Example For RDBMS:  MySQL, PostgreSQL, Oracle, and SQL Server
+
+
+
+NoSQL:
+*)NoSQL databases support various data models, such as document, key-value, 
+  column-family, and graph.
+*)NoSQL: NoSQL databases are well-suited for web applications, social networks,
+ IoT (Internet of Things), real-time analytics, and applications requiring high 
+ availability and scalability.
+*) Example For NoSQL: MongoDB,Cassandra
+
+
+Properties of RDBMS:
+1.Tabular Structure: Data is organized into tables with rows and columns.
+2.Primary Keys: Each row has a unique identifier for data integrity.
+3.Foreign Keys: Establish relationships between tables for data consistency.
+4.ACID Properties: Ensure reliable and secure transactions.
+5.SQL: Standard language for querying and managing data.
+6.Data Integrity Constraints: Enforce rules for accurate and consistent data.
+7.Concurrency Control: Manage simultaneous access to data for reliability.
+8.Indexing: Speed up data retrieval by creating indexes.
+9.Security: Protect data through authentication, authorization, and encryption.
+
+*) Key : A key in a relational database is a field or combination of fields that 
+   uniquely identifies each record in a table.
+
+     types of key :
+	 1)Primary Key (PK):
+	   *)A primary key uniquely identifies each record in a table.
+       *)Each table can have only one primary key.
+       *)Example: In a table named "Students," the "StudentID" field can serve
+	    as the primary key. Each student has a unique student ID, ensuring that
+	    no two records have the same ID.
+	 2)Foreign Key (FK):
+       *)A foreign key establishes a relationship between two tables by referencing
+	    the primary key of another table.
+        *)Example: In a database with two tables, "Orders" and "Customers," the "CustomerID"
+		field in the "Orders" table can serve as a foreign key referencing the primary key 
+		"CustomerID" in the "Customers" table. This relationship ensures that orders are 
+		associated with valid customer IDs.	
+     3)Candidate Key:
+       *) A candidate key is a field or combination of fields that can uniquely identify 
+	   records in a table, similar to a primary key.
+       *) Unlike a primary key, a table can have multiple candidate keys.
+       *)  Example: In a table named "Employees," both the "EmployeeID" and "SocialSecurityNumber" fields can individually serve as candidate keys because they uniquely identify each employee.
+     4)Composite Key:
+       *) A composite key consists of multiple fields that, when combined, uniquely identify records in a table.	 
+	   *) Example: In a table named "Sales," a composite key may consist of "OrderID" and "ProductID." Together, these fields uniquely identify each sales transaction because an order can contain multiple products, and a product can appear in multiple orders.
+	   
