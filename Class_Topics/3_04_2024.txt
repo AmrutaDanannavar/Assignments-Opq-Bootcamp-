@@ -1,0 +1,65 @@
+
+Terms:
+ Relation :a "relation" refers to a table that stores data in rows and columns
+ 
+ Attribute of a Relation: an attribute of a relation refers to a column or field within a table.
+ 
+ Tuple: "tuple" refers to a single row or record within a table.
+
+ Degree of  a relation: the "degree" of a relation refers to the number of attributes or columns in a table.
+ 
+ Cardinality of a relation: the "cardinality" of a relation refers to the number of tuples or rows in a table. 
+ 
+ Database(DB) Schema : DB Schema or Schema Design is all about structuring the data base . 
+        it includes below points
+   -> What are the different tables required to store data.
+   -> what are different attribute in each table.
+   -> what is the relationship  between any two tables.
+ 
+ 
+ Example for a Schema design :
+ case study:Modeling DB for OPQTech 
+ 
+ How to style modeling your schema ?
+ 
+ 1.Find all entities(anything for which we are storing multiple details)  in your requirements .
+  from above Requirements Entities are :Entities helps to create tables.
+   *)Batches
+   *)Students
+   *)Classes
+   *)Mentor 
+   *)instructor
+   
+   *)Batches : Attributes are
+   ->Id
+   ->name
+   ->Current Instructor
+   ->Start Date 
+   
+   *)Students: Attributes are
+   ->Id ssssss
+   ->Name
+   ->Graduate year 
+   ->University
+   ->Email
+   ->Phonenumber 
+   
+   *)Classes: Attributes are
+   ->Id
+   ->Name
+   ->Instructor
+   ->Date& Time
+   
+   *)Instructor: Attributes are
+   ->Id
+   ->Name 
+   ->Qualification
+   ->Current company 
+   
+   *)Mentor: Attributes are
+   ->Id
+   ->Name
+   ->Qualification
+   ->Current company 
+ 
+ 
