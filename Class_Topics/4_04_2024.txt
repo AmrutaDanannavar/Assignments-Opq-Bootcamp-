@@ -1,0 +1,78 @@
+                           
+						   Types of relationships
+						  
+    1.One-to-One (1:1) Relationship:In a one-to-one relationship, each record in one table is related to exactly one record in another table, and vice versa.
+	
+	example :
+	Each department has exactly one chairperson (instructor).
+    Each instructor can be the chairperson of only one department.
+	
+   +-------------+        +-------------+
+   | Department  |        |  Instructor |
+   +-------------+        +-------------+
+   | DepartmentID| 1    1 | InstructorID|
+   | DeptName    |--------| FirstName   |
+   | ChairpersonID|       | LastName    |
+   +-------------+        | Email       |
+            |             +-------------+
+            |                     |
+            |                     |
+            +---------------------+
+			
+	2.One-to-Many (1:N) Relationship:In a one-to-many relationship, each record in one table can be related to multiple records in another table, but each record in the second table is related to only one record in the first table.
+    
+    example:
+    Each department offers multiple courses.
+    Each course is offered by only one department.	
+	
+   +-------------+        +-------------+
+   | Department  |        |    Course   |
+   +-------------+        +-------------+
+   | DepartmentID| 1    N | CourseID    |
+   | DeptName    |--------| CourseName  |
+   | ChairpersonID|        | Credits     |
+   +-------------+        +-------------+
+            |                     |
+            |                     |
+            +---------------------+
+
+    3.Many-to-One (N:1) Relationship:A many-to-one relationship is essentially the inverse of a one-to-many relationship. It occurs when multiple records in one table are related to a single record in another table.
+	
+	example:
+	Many courses can be taught by the same instructor.
+    Each instructor can teach multiple course.
+	
+   +-------------+        +-------------+
+   |    Course   |        |  Instructor |
+   +-------------+        +-------------+
+   | CourseID    | N    1 | InstructorID|
+   | CourseName  |--------| FirstName   |
+   | Credits     |        | LastName    |
+   | DepartmentID|        | Email       |
+   +-------------+        +-------------+
+            |                     |
+            |                     |
+            +---------------------+
+
+    4.Many-to-Many (N:M) Relationship:In a many-to-many relationship, multiple records in one table can be related to multiple records in another table, and vice versa.
+	
+	example:
+	Each student can enroll in multiple courses.
+    Each course can have multiple students enrolled.
+	
+   +-------------+         +-------------+        +-------------+
+   |   Student   |         |  Enrollment |        |    Course   |
+   +-------------+         +-------------+        +-------------+
+   | StudentID   | N    M  | StudentID   | N    M | CourseID    |
+   | FirstName   |---------| CourseID    |--------| CourseName  |
+   | LastName    |         +-------------+        | Credits     |
+   | Email       |                                | DepartmentID|
+   +-------------+                                +-------------+
+             |                                          |
+             |                                          |
+             +------------------------------------------+
+ 
+  
+      In case of  creation of mapping table when should we go for dedicated primary key for that table
+	  1.If Mapping table also has some relationship with other table.
+	  2.If mapping table has multiple attributes .
