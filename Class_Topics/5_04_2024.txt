@@ -1,0 +1,72 @@
+
+                                 SQL Datatypes
+						   
+	*)Exact numeric data types in SQL are used for storing numbers where the precision and scale are fixed. 					   
+	 Examples:
+	  1.INTEGER: Used for storing whole numbers.
+      Example: quantity INTEGER
+
+      2.SMALLINT: Similar to INTEGER but with a smaller range.
+      Example: product_id SMALLINT
+
+      3.BIGINT: Used for storing very large whole numbers.
+      Example: transaction_id BIGINT
+
+      4.NUMERIC(precision, scale) or DECIMAL(precision, scale): Fixed-point number with user-specified precision and scale.
+      Example: price NUMERIC(10, 2) (stores up to 10 digits with 2 digits after the decimal point)
+
+      5.DEC(precision, scale): Alias for DECIMAL.
+      Example: discount DEC(5, 2) (stores up to 5 digits with 2 digits after the decimal point)
+
+      6.BIT: Used for storing binary data, typically 0 or 1.
+      Example: is_active BIT
+
+      7.BOOLEAN: Similar to BIT, used for storing true/false or 1/0 values.
+      Example: is_approved BOOLEAN
+    
+
+	*)Approximate numeric data types in SQL are used for storing floating-point numbers where precision is not fixed.
+	 Examples:
+	 
+	 1.FLOAT: Used for storing floating-point numbers with single precision.
+      Example: temperature FLOAT
+
+     2.REAL: Alias for FLOAT.
+       Example: sensor_reading REAL
+	
+
+	*)String data types in SQL are used for storing character data. 
+	 Examples:
+	 
+	  1.CHAR(n): Fixed-length character string where n is the maximum number of characters.
+      Example: first_name CHAR(50)
+
+      2.VARCHAR(n): Variable-length character string where n is the maximum number of characters.
+       Example: last_name VARCHAR(100)
+
+      3.TEXT: Variable-length character string with a very large maximum length.
+       Example: description TEXT
+	   
+	*)Date and time data types in SQL are used for storing date and/or time information   
+	 Examples:
+	 
+	 1.DATE: Used for storing date values without time information.
+     Example: birth_date DATE
+
+     2.TIME: Used for storing time values without date information.
+     Example: appointment_time TIME
+
+     3.DATETIME: Used for storing both date and time values.
+      Example: created_at DATETIME
+
+     4.TIMESTAMP: Similar to DATETIME, used for storing date and time values, often with added functionality for automatic updates (like current timestamp on insert or update).
+     Example: last_updated TIMESTAMP
+	 
+	*)Binary data types in SQL are used for storing binary data, such as images, files, or other non-textual data
+	 Examples:
+	 
+	 1.BINARY(n): Fixed-length binary string where n is the maximum number of bytes.
+     Example: image_data BINARY(1000)
+
+     2.VARBINARY(n): Variable-length binary string where n is the maximum number of bytes.
+     Example: file_data VARBINARY(2000)
