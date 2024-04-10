@@ -1,0 +1,65 @@
+
+Normalization:
+
+* )Normalization in databases is a process used to organize data in a relational database efficiently. It aims to reduce redundancy and dependency by breaking down larger tables into smaller ones and establishing relationships between them
+
+  goals of normalization :
+  1. minimize data redundancy : Data redundancy refers to the repetition of data within a database. 
+  2. ensure data integrity:Data integrity refers to the accuracy, consistency, and reliability of data stored in a  database
+  3. simplify data management: Data management involves the processes and activities related to the storage, retrieval, manipulation, and maintenance of data within a database system
+  
+ Types of Normalization:
+ 
+ 1.First Normal Form (1NF):  It establishes the fundamental rule that each cell within a table must contain a single, indivisible value, ensuring atomicity. In other words, each attribute or column in a table must hold only a single value, and it should not contain multiple values or repeating groups.
+
+ Example:
+
+ StudentId   StudentName   CourseId                  StudentId     StudentName     CourseId
+   1           Johan        101,102       1NF          1             Johan           101
+   2           Shama         103        -------->      1             Johan           102
+   3           Suma         104,105                    2             Shama           103
+                                                       3             Suma            104
+				                                       3             Suma            105
+
+2.Second Normal Form (2NF): In addition to meeting the requirements of 1NF, a table must also have a primary key, and no non-key attributes should be dependent on only a portion of the primary key. This eliminates partial dependencies.
+
+Example: 
+
+StudentId   StudentName   CourseId   CourseName   Grade
+  1             Johan      101        Java         A
+  2             Shama      102        SQL          B
+  3             Suma       103        Python       C
+  
+                        |
+						|
+						| 2NF
+						|
+						|
+						 
+ StudentTable :                               GradeTable:
+ 
+ StudentId   StudentName                       StudentId      CourseId     Grade
+   1          Johan                              1              101         A
+   2          Shama	                             2              102         B
+   3          Suma                               3              103         C
+   
+   
+ 3.Third Normal Form (3NF): A table is in 3NF if it is in 2NF and all the attributes in the table are determined only by the candidate keys and not by any other non-prime attributes. This removes transitive dependencies.
+ 
+ Example:
+ 
+ EmployeeID  EmployeeName	DepartmentID	DepartmentName	DepartmentLocation
+  1            John           101            Engineering     New York
+  2            Shama          102            Marketing       Chicago
+  
+                                    |
+									|
+									|3NF
+									|
+									|
+									
+ Employees Table:                               Departments Table:
+ 
+  EmployeeID  EmployeeName  DepartmentID         DepartmentID   DepartmentName    DepartmentLocation
+     1          Johan         101                 101            Engineering       New York
+	 2          Shama         102                 102            Marketing         Chicago
