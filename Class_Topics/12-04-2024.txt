@@ -1,0 +1,39 @@
+use netflix;
+
+/*String Functions in sql*/
+select concat(ActorId,Name) as Fullname
+from Actors;
+select upper(Name) as Cname
+from actors;
+select reverse(Name) as Rname
+from actors;
+select char_length(Name) as Length
+from actors;
+
+
+/*SELECT Clause
+Used to retrieve data from one or more tables.
+FROM Clause,Specifies the table or tables from which to retrieve data.*/
+select * from cast; /* select all columns of the table*/
+select * from profiles;
+select  VideoId from cast; /* selects perticular columns of table*/
+
+/*WHERE Clause:Filters records based on specified conditions.*/
+select Name from Actors 
+where ActorId>1;
+select Name from Profiles
+where ProfileId>12 and UserId<3;
+
+/*ORDER BY Clause:Sorts the result set in ascending or descending order based on one or more columns*/
+select *from profiles order by ProfileId desc;
+select * from users order by UserId desc;
+
+/*LIMIT: It specifies the maximum number of rows to return in the result set.
+OFFSET: It specifies the number of rows to skip from the beginning of the result 
+set before starting to return rows */
+
+select VideoId from videos
+limit 2 offset 1;
+
+
+
