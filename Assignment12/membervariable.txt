@@ -1,0 +1,15 @@
+
+
+*)Member Variables:
+Member variables, also known as instance variables or fields, are attributes associated with each instance of a class. These variables define the state of the object and represent its data. Each object created from the class has its own copy of the member variables. Member variables can have different data types, such as primitive types (integers, floats, booleans) or reference types (objects, arrays). They are typically declared at the top of the class and can be accessed and modified using object instances.
+
+Example in JavaScript:
+ class Person {
+    constructor(name, age) {
+        this.name = name; // Member variable
+        this.age = age;   // Member variable
+    }
+}
+const person1 = new Person("Alice", 30);
+console.log(person1.name); // Output: Alice
+console.log(person1.age);  // Output: 30

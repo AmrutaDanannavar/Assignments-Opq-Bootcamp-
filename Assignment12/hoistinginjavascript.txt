@@ -1,0 +1,18 @@
+
+Hoisting in a JavaScript :
+
+*)Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed. This means that regardless of where variables are declared in the code, they are treated as if they are declared at the top of their containing scope.
+
+example:
+ console.log(x); // Output: undefined
+ var x = 5;
+
+*)Even though x is being logged before it is declared and assigned a value, the code doesn't result in an error. This is because JavaScript hoists the declaration of x to the top of its containing scope during compilation. The code is essentially interpreted as follows:
+
+ var x;
+ console.log(x); // Output: undefined
+ x = 5;
+
+*)it's important to note that hoisting only moves the declaration of the variable, not its initialization. So, while the declaration of a variable is hoisted to the top, its assignment or initialization remains in its original position.
+
+*)But for let and const, hoisting works slightly differently. Variables declared with let and const are hoisted to the top of their block scope, but they are not initialized. This is known as the "temporal dead zone" (TDZ). Accessing a variable before its declaration within the TDZ results in a ReferenceError. This behavior was introduced to address some of the issues with var hoisting.

@@ -1,0 +1,24 @@
+1.Global Scope:
+
+*)Variables declared outside of any function or block have global scope. They are accessible from anywhere in the code, including inside functions and blocks.
+*)Global variables are declared using the var, let, or const keywords outside of any function or block.
+*)Global variables persist throughout the entire runtime of the program.
+example:
+    var globalVar = 10;
+       function foo() {
+         console.log(globalVar); // Accessible inside functions
+        }
+       console.log(globalVar); // Accessible outside functions
+
+2.Local Scope:
+
+*)Variables declared inside a function or block have local scope. They are accessible only within the function or block in which they are declared.
+*)Local variables are declared using the var, let, or const keywords inside a function or block.
+*)Local variables are not accessible from outside the function or block in which they are declared.
+example:
+     function foo() {
+       var localVar = 20;
+       console.log(localVar); // Accessible inside the function
+    }
+    foo();
+    console.log(localVar); // Error: localVar is not defined

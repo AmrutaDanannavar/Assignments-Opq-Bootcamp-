@@ -1,0 +1,157 @@
+
+
+Object-Oriented Programming (OOP):
+
+Object-Oriented Programming (OOP) is based on the concept of "objects," which can contain data (attributes or properties) and code (methods or functions). The primary goal of OOP is to organize complex software systems into modular units that represent real-world entities and interactions.
+
+Object:
+  Objects are instances of classes or prototypes and can have properties and methods associated with them.
+
+  Example:
+    const person={name:"john", //creating object 
+                   age:30
+                   };
+    console.log(person.name); //Accessing properties
+    console.log(person.age);  
+
+Class :
+  A class in JavaScript is a blueprint for creating objects. It defines properties and methods that all instances of the class will have.
+
+  Example:
+   class Person {
+        constructor(name,age){ //constructor method
+         this.name=name;
+         this.age=age;
+        }
+    }
+    const person1=new Person("johan",30);//creating instance for class Person
+    console.log(person1.name);//Accessing properties
+    console.log(person1.age);
+
+
+Constructor:
+  A constructor in JavaScript is a special method that is automatically called when an instance of a class (or an object) is created.
+  *)Constructors are defined using the constructor keyword. 
+
+   Example:
+
+    class Person {
+        constructor(name,age){ //constructor method
+         this.name=name;
+         this.age=age;
+     }
+    }
+    const person1=new Person("johan",30);//creating instance for class Person
+    console.log(person1.name);//Accessing properties
+    console.log(person1.age);
+
+Concepts of OOPs:
+
+    1. Encapsulation:
+       The process of wrapping properties and functions within a single unit is known as encapsulation.
+
+       Example:
+       class car {
+        constructor(make, model) {
+        this._make = make; // private variable
+        this._model = model; // private variable
+        }
+        get make() {
+        return this._make;
+        }
+        get model() {
+        return this._model;
+        }
+      }
+      const myCar = new Car("Toyota", "Corolla");
+      console.log(myCar.make);
+      console.log(myCar.model);
+
+    2.Inheritance:
+      Inheritance allows a class (subclass) to inherit properties and methods from another class (superclass).  
+
+      Example:
+      class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+        speak() {
+           console.log(`${this.name} makes a noise.`);
+          }
+      }
+     class Dog extends Animal {
+         constructor(name, breed) {
+            super(name); // Call the superclass constructor
+            this.breed = breed;
+         }
+       // Method overriding
+        speak() {
+        console.log(`${this.name} barks.`);
+       }
+     }
+     const myDog = new Dog("Max", "Labrador");
+     myDog.speak(); // Output: Max barks.
+
+    3.Polymorphism:
+      Polymorphism allows objects of different types to be treated as objects of a common superclass. This enables code to be written in a more general way, where the same method can behave differently depending on the specific type of object it is called on.
+
+      Example:
+
+      class Shape {
+             draw() {
+               console.log("Drawing a shape.");
+            }
+        }
+
+      class Circle extends Shape {
+            draw() {
+               console.log("Drawing a circle.");
+            }
+        }
+
+      class Square extends Shape {
+            draw() {
+                console.log("Drawing a square.");
+            }
+        }
+
+      const shapes = [new Circle(), new Square()];
+      shapes.forEach(shape => shape.draw());
+        // Output:
+        // Drawing a circle.
+        // Drawing a square.
+
+    4. Abstraction:
+       Abstraction involves simplifying complex systems by focusing on the essential properties and behaviors while hiding unnecessary details
+
+       Example:
+
+       // Abstract class
+        class Vehicle {
+           constructor(make, model) {
+              this.make = make;
+              this.model = model;
+            }
+
+       // Abstract method
+           start() {
+             throw new Error("Method 'start' must be implemented.");
+           }
+        }
+
+     // Concrete class implementing the abstract class
+        class Car extends Vehicle {
+             constructor(make, model) {
+                 super(make, model);
+             }
+
+     // Implementation of the abstract method
+             start() {
+               console.log(`${this.make} ${this.model} started.`);
+            }
+        }
+
+       const myCar = new Car("Toyota", "Corolla");
+       myCar.start(); // Output: Toyota Corolla started.
+    
+ 

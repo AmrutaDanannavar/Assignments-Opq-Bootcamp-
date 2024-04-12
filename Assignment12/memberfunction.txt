@@ -1,0 +1,18 @@
+
+
+*)Member Functions:
+Member functions, also known as methods, are functions defined within a class that operate on its member variables. These functions encapsulate behavior related to the object's state and are used to perform actions or provide functionality specific to the class. Member functions can access and manipulate member variables and are invoked using object instances. They can also take parameters and return values as needed.
+
+Example in JavaScript:
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;   // Member variable
+        this.height = height; // Member variable
+    }
+
+    calculateArea() { // Member function
+        return this.width * this.height; // Accessing member variables
+    }
+}
+const rectangle1 = new Rectangle(5, 10);
+console.log(rectangle1.calculateArea()); // Output: 50

@@ -1,0 +1,41 @@
+1.Var:
+*)Variables declared with var have function scope or global scope, but not block scope.
+*)If declared inside a function, the variable is accessible throughout the entire function, including nested blocks.
+*)Variables declared with var are hoisted to the top of their containing function or global scope during the compilation phase. This means that you can access the variable before it is declared, but its value will be undefined.
+Example:
+  function example() {
+    if (true) {
+        var localVar = 'I am inside a block';
+    }
+    console.log(localVar); // localVar is accessible here
+   }
+    example(); // Output: I am inside a block
+
+2.Let :
+*)Variables declared with let have block scope, meaning they are only accessible within the block in which they are declared.
+*)Unlike var, variables declared with let are not hoisted to the top of their containing block during the compilation phase. They are only accessible after the point of declaration.
+*)Variables declared with let can be reassigned a new value, but they cannot be redeclared in the same scope.
+Example:
+    function example() {
+    if (true) {
+        let localVar = 'I am inside a block';
+        console.log(localVar); // localVar is accessible here
+    }
+    console.log(localVar); // Error: localVar is not defined
+  }
+  example();
+
+3.Const:
+*)Variables declared with const also have block scope, similar to let.
+*)Constants declared with const cannot be reassigned a new value after initialization. They are read-only.
+*)Like let, variables declared with const are not hoisted to the top of their containing block during the compilation phase.
+Example:
+ function example() {
+    if (true) {
+        const PI = 3.14;
+        console.log(PI); // PI is accessible here
+    }
+    console.log(PI); // Error: PI is not defined
+  }
+  example();
+  
