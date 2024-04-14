@@ -1,0 +1,81 @@
+
+JOINS:-
+
+*)joins are used to combine rows from two or more tables based on a related column between them
+
+*)Joins allow you to retrieve data from multiple tables in a single query by specifying how the 
+  tables should be connected or related to each other.
+  
+  Types of joins 
+   1.Join or Innerjoin
+   2.Left Join (or Left Outer Join)
+   3.Right Join (or Right Outer Join)
+   4.Self-Join
+   5.Multi-Table Join
+
+lets take Example of Netflix database system for all the above join explaination:
+
+tbales in netflix database are:
+1. Users
+2.Profiles
+3.Videos
+4.Cast
+5.Actors
+6.LastWatchHistory 
+
+1.Innerjoin/join:
+   *)An inner join returns only the rows where there is a match in both tables
+    involved in the join.
+   *)It combines rows from two tables based on a related column between them.
+    Example:                                       	
+     	select Name                              
+        from Profiles P                          
+        join Users U                             
+        ON U.UserId = P.UserId
+        Where 	U.UserId>1;
+
+2.Left Join (or Left Outer Join):
+  *)A left join returns all rows from the left table (Users) and the matched
+    rows from the right table (Profiles).
+  *)If there is no match, the result is NULL from the right side.
+  Example:
+    SELECT Users.UserId, Profiles.Name
+    FROM Users
+    LEFT JOIN Profiles ON Users.UserId = Profiles.UserId;
+	
+  
+3.Right Join (or Right Outer Join):
+ *)A right join returns all rows from the right table (Profiles) and the matched 
+  rows from the left table (Users).  
+  *)If there is no match, the result is NULL from the left side.
+  Example:
+    SELECT Users.UserId, Profiles.Name
+    FROM Users
+    RIGHT JOIN Profiles ON Users.UserId = Profiles.UserId;
+	
+4.Self-Join:
+*)A self-join is a type of join where a table is joined with itself. 
+This can be useful when you want to compare rows within the same table,
+ or when you want to create hierarchical queries.	
+ 
+ Example:
+ SELECT v1.VideoId AS VideoId1, v2.VideoId AS VideoId2
+ FROM Videos v1
+ JOIN Videos v2 ON v1.VideoId <> v2.VideoId
+ AND v1.Description = v2.Description;
+ 
+5.Multi-Table Join: 
+  *)A multi-table join involves joining more than two tables together in a
+  single query. This can be useful when you need to retrieve data from 
+  multiple related tables.
+  
+  Example:
+  
+  SELECT p.Name AS ProfileName, v.Title AS VideoTitle, a.Name AS ActorName
+  FROM Profiles p
+  JOIN WatchHistory wh ON p.ProfileId = wh.ProfileId
+  JOIN Videos v ON wh.VideoId = v.VideoId
+  JOIN Cast c ON v.VideoId = c.VideoId
+  JOIN Actors a ON c.ActorId = a.ActorId;
+
+	
