@@ -1,0 +1,80 @@
+
+Joins practice :
+
+use sql_store;
+
+select  *from customers;
+select * from orders;
+
+ select first_name,order_id
+ from customers s join 
+ orders o on s.customer_id = o.customer_id;
+ 
+ use sql_hr;
+ 
+ select * from employees;
+ select * from offices;
+ 
+SELECT c.first_name , p.name 
+FROM customers c
+JOIN orders  o ON c. customer_id = o.customer_id
+JOIN  order_items oi  ON oi.order_id = o.order_id
+JOIN products p ON oi.product_id = p.product_id;
+
+select * from products;
+
+---------------------------------****---------------------------------
+
+ Aggregate functions:
+
+ 
+ *)Aggregate functions in SQL are functions that perform a calculation on a set of
+ values and return a single value. These functions are commonly used with the GROUP BY 
+ clause to perform calculations on groups of rows rather than on individual rows
+ 
+ 1.COUNT: Returns the number of rows that match a specified condition
+  ex:
+     SELECT COUNT(*)
+     FROM table_name;
+	 
+ 2.SUM: Returns the sum of the values in a column.
+   ex:
+      SELECT SUM(column_name)
+      FROM table_name;
+ 
+ 3.AVG: Returns the average of the values in a column.
+   ex:
+     SELECT AVG(column_name)
+     FROM table_name;
+	 
+ 4.MIN: Returns the minimum value in a column.
+   ex:
+     SELECT MIN(column_name)
+     FROM table_name;
+	 
+ 5.MAX: Returns the maximum value in a column.
+   ex: 
+    SELECT MAX(column_name)
+    FROM table_name;
+   
+   
+ Group By Clause : 
+ 
+  The GROUP BY clause in SQL is used to group rows that have the same values 
+  into summary rows, typically to apply an aggregate function such as COUNT,
+  SUM, AVG, MIN, or MAX to each group
+  
+  example:
+   1.select name,sum(quantity_in_stock)
+     from products
+     group by name;
+	 
+   2.SELECT customer_id, COUNT(*) AS total_orders
+     FROM orders
+     GROUP BY customer_id;
+	 
+   
+   
+
+	 
+  
