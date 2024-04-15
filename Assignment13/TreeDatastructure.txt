@@ -1,0 +1,37 @@
+                             TREE DATA STRUCTURE
+                            -------*-----------*----
+A tree data structure is a hierarchical data structure that consists of nodes connected by edges. Each node contains a value (or data) and may also have a link to one or more child nodes. The topmost node in a tree is called the root node, and each node in the tree may have zero or more child nodes.
+
+Here are some key terms associated with trees:
+
+Root: The topmost node of the tree.
+Node: Each element in the tree that contains a value and links to its child nodes.
+Parent: A node that has one or more child nodes.
+Child: A node that has a parent node.
+Leaf: A node with no children.
+Edge: The connection between nodes.
+Subtree: A tree rooted at a node and all its descendants.
+Depth: The depth of a node in a tree is the length of the path from the root to that node.
+Height: The height of a tree is the maximum depth of any node in the tree.
+
+
+Tree data structures are used for various reasons:
+1.Hierarchical Data Representation
+2.Searching and Sorting
+3.Efficient Data Retrieval
+4.Balanced Tree Structures
+5.Memory Management
+ 
+                           Binary  Tree
+                        --------*-------*-----
+
+    A binary tree is a hierarchical data structure in which each node has at most two children, referred to as the left child and the right child. The topmost node in a binary tree is called the root node. Nodes without any children are called leaf nodes or external nodes, while nodes with children are called internal nodes
+
+                          Binary Search Tree
+                          -------*-----------
+
+    A binary search tree (BST) is a specific type of binary tree in which the nodes are arranged in a particular order or sequence that facilitates efficient searching, insertion, and deletion operations. In a binary search tree:
+
+    *)For any node in the tree, all nodes in its left subtree have values less than the node's value.
+    *)For any node in the tree, all nodes in its right subtree have values greater than the node's value.
+    *)The binary search tree property is recursively applied to all nodes in the tree.                                             
