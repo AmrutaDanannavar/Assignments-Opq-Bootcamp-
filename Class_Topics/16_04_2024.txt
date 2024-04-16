@@ -1,0 +1,47 @@
+
+
+                Having Clause    
+                -----*-------
+    *)The HAVING clause in SQL is used in combination with the GROUP BY clause to filter groups of rows returned by a query based on specified conditions. 
+    *)While the WHERE clause filters individual rows before grouping, the HAVING clause filters groups of rows after they have been grouped.            
+
+    Examples discussed in today class:
+    1)
+    -- Find total number of products in stock
+       select count(product_id) as TotalnumberOfProducts
+       from products ;
+
+    2) 
+    -- for every order status find the count of orders
+        select count(order_id) as CountOfOrders
+        from orders
+        group by status;    
+
+   3)
+    -- show total invoices value of client,for only those clients who have more than 2 invoices 
+        select client_id, Sum(invoice_total)
+        from invoices 
+        group by client_id
+        having count(invoice_id)>2;                
+
+   4)-- show total Invoice per client
+     --  consider only those invoices which have a payment date
+     --  show only those client who have atleast 2 invoices
+            select client_id, Sum(invoice_total)
+            from invoices 
+            where payment_date is not null
+            group by client_id
+            having count(invoice_id)>2;     
+
+   5)-- customer_id ,total number of items bought by each customers 
+        select  o.customer_id ,count(1)
+        from orders o 
+        join order_items oi
+        on o.order_id = oi.order_id
+        group by o.customer_id;         
+
+        select O.customer_id,count(OI.quantity) as count 
+        from orders O 
+        JOIN order_items OI ON O.order_id=OI.order_id
+        group by O.customer_id 
+        order by count desc limit 1;
