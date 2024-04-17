@@ -1,0 +1,84 @@
+*)Reading or updating (I/O) operations will bring data from harddisk to RAM segment by segment.
+
+*)Once the data is in RAM, it is analyzed by cpu and rows are selected/rejected to prepare result.
+
+                               Indexing 
+                               ---*------
+*)Indexing is used to optimizing the performance of DB by minimizing the no  of disk accesses required when a query is processed.
+
+*)The index is a type of data structure. It is used to locate and access the data in a database table quickly
+
+structure Indexing:
+
+  +-------------------+-----------------------------+ 
+  |     Search Key    |       Data Reference        | 
+  +-------------------+-----------------------------+ 
+  |     Key Column 1  |    Pointer to Data Row 1    | 
+  |     Key Column 2  |    Pointer to Data Row 2    | 
+  |     Key Column 3  |    Pointer to Data Row 3    | 
+  |         ...       |             ...             | 
+  +-------------------+-----------------------------+ 
+
+  *)The first column of the database is the search key that contains a copy of the primary key   or candidate key of the table. The values of the primary key are stored in sorted order so that the corresponding data can be accessed easily.
+
+  *)The second column of the database is the data reference. It contains a set of pointers holding the address of the disk block where the value of the particular key can be found.
+
+
+ Example :
+ Original Table (without index):
+
+ | EmployeeID |   Name   | Age | Department |
+ |------------|----------|-----|------------|
+ |     1      |  Alice   |  30 |    HR      |
+ |     2      |   Bob    |  35 |    IT      |
+ |     3      |  Charlie |  40 |    HR      |
+ |     4      |   David  |  28 |    IT      |
+ |     ...    |   ...    | ... |    ...     |
+
+ Indexed Table (with index on "Name" column):
+
+ Index on "Name":
+|   Name    | Pointer to Record |
+|-----------|-------------------|
+|  Alice    |        1          |
+|   Bob     |        2          |
+|  Charlie  |        3          |
+|   David   |        4          |
+|   ...     |       ...         |
+
+Original Table:
+| EmployeeID |   Name   | Age | Department |
+|------------|----------|-----|------------|
+|     1      |  Alice   |  30 |    HR      |
+|     2      |   Bob    |  35 |    IT      |
+|     3      |  Charlie |  40 |    HR      |
+|     4      |   David  |  28 |    IT      |
+|     ...    |   ...    | ... |    ...     |
+
+
+
+explain select * from customers
+where points = 1486;          --  before indexing it will search 10 rows 
+
+create index idx_customer_points on customers(points);
+
+explain select * from customers
+where points = 1486;        --  after indexing it will search 1 row
+
+drop index idx_customer_points on customers;   -- removing indexing
+
+
+advantages of indexing :
+1.Improved Query Performance
+2.Faster Sorting and Grouping
+3.Enhanced Join Operations
+
+disadvantages of indexing:
+1.Increased Storage Overhead
+2.Storage and Memory Requirements
+
+guidelinces :
+1.don't create index while creating table
+2.analyze the traffic of DB and take relevant actions to create index.
+
+
