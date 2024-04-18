@@ -1,0 +1,115 @@
+
+
+                             SubQuery     
+                        -------*---------
+    
+  *)A subquery, also known as a nested query or inner query, is a SQL query nested within another SQL query. It allows you to retrieve data from one or more tables based on the results of another query.  
+
+  *)Subqueries are enclosed within parentheses and can be used in various parts of a SQL statement, such as SELECT, INSERT, UPDATE, or DELETE statements.
+
+  *)Inner Query with One Value:
+    When the inner query returns a single value, you typically use comparison operators like "=", ">", "<", ">=", "<=", or "<>" to compare the result of the subquery with a single value.
+
+  *)Inner Query with Multiple Values:
+   When the inner query returns multiple values, you typically use set operators like "IN", "NOT IN", "ANY", "ALL", or "EXISTS" to check for membership or existence in a set of values.  
+
+  example:1
+
+students table :
++----+---------------+-------+---------+
+| id |     name      | score | batchid |
++----+---------------+-------+---------+
+|  1 | John Doe      | 85.50 |       1 |
+|  2 | Jane Smith    | 90.00 |       2 |
+|  3 | Alice Johnson | 75.80 |       3 |
+|  4 | Bob Williams  | 88.20 |       2 |
+|  5 | Emily Brown   | 82.70 |       1 |
+|  6 |   Emily      | 78.23 |       3 |
++----+---------------+-------+---------+
+
+problem 1: find all the students having score heigher than score of student with id=5
+ SELECT * from students
+
+
+ using joins :
+
+ SELECT s1.*
+ FROM Students s1
+ JOIN Students s2 ON s1.score > s2.score
+ WHERE s2.id = 5;
+
+ using subquery:
+
+ SELECT *
+ FROM Students
+ WHERE score > (
+    SELECT score
+    FROM Students
+    WHERE id = 5
+ );
+
+ problem 2: find the students who have there score greater than all students of batch id =3
+      SELECT * from students
+      WHERE score >=(SELECT max(score) from students
+                  WHERE batchid =2);
+                  -- or
+      SELECT * from students
+      WHERE score >= all (SELECT score from students
+                  WHERE batchid =2); 
+
+
+ Corelated  subquery:
+ Q1) Find all students who have score greater than avg score of their own batch 
+
+     SELECT *
+     FROM Students s
+     WHERE s.score > (
+     SELECT AVG(score) 
+     FROM Students
+     WHERE batchid = s.batchid
+);
+
+
+
+Rules:
+*)Inner query must return a single row single column (one value) for comparision  operator.
+
+
+
+ example:2
++----+-----------+                                   
+| id |   name    |                                  
++----+-----------+
+|  1 | Product A |
+|  2 | Product B |
+|  3 | Product C |
+|  4 | Product D |
+|  5 | Product E |
++----+-----------+
+
++----+-------------+------------+
+| id | customer_id | product_id |
++----+-------------+------------+
+|  1 |           1 |          1 |
+|  2 |           1 |          5 |
+|  3 |           2 |          3 |
+|  4 |           2 |          1 |
+|  5 |           3 |          1 |
++----+-------------+------------+
+
+                 
+ problem 1: Find product which are not  ordered
+ SELECT id, name
+ FROM Product
+ WHERE id NOT IN (
+    SELECT DISTINCT product_id
+    FROM Orders
+ );
+
+
+
+when we go for joins and when we go for subquery:
+
+*) joins are faster if data is large but subquery is slower . so joins is better in this case.
+*) when we have less data it is better to use subquery .
+
