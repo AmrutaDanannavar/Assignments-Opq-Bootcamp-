@@ -1,0 +1,27 @@
+                               
+
+                          SQL TRANSACTIONS
+
+    *)Transactions group a set of tasks into a single execution unit.
+
+    *)Each transaction begins with a specific job and ends when all the tasks in the group successfully completed.
+
+    *)If any of the tasks fail, the transaction fails. Therefore, a transaction has only two results: success or failure
+    
+    Example of a transaction to transfer $150 from account A to account B:
+
+    1. read(A)        //let us consider A=1000
+    2. A:= A – 150    //1000-150 =850
+    3. write(A)       //A=850
+    4. read(B)        // let us consider B=50
+    5. B:= B + 150    //B=150+50=200
+    6. write(B)        //B=200                   
+
+
+    BEGIN TRANSACTION Command
+    Syntax: 
+    BEGIN TRANSACTION transaction_name ;
+
+    SET TRANSACTION Command
+    Syntax:
+    SET TRANSACTION [ READ WRITE | READ ONLY ];
