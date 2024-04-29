@@ -1,0 +1,37 @@
+               
+               LINUX COMMANDS 
+
+1) Pwd     --> present working directory 
+
+2) ./      --> current directory
+
+3) ../     --> Previous directory
+
+4) cd      --> Change directory
+
+5) mkdir dir1  --> Creating new directory
+
+6) makdir -p dir1/dir2/dir3  -->  Creating nested directory 
+
+7) touch file1  -->Creating new file
+
+8) ls       ---> shows list of files in directory
+
+9) ls -l    --> shows Details about all the files in directory
+
+10) ls -la  --> shows hidden files (dot(.) files are hidden files)
+
+11) ls -lt  --> sort the list of files based on time 
+
+12) ls -ltr  --> Reverse the list of files
+
+13) ls -lh  --> it shows file size in human readable format 
+
+14) man ls  --> man commnad will show how to use particular commnad which are supported by LINUX
+            Press "Q" to come out of man 
+
+15)rm file1  --> Used to remove files 
+
+16)rmdir dir1  --> for removing directory it should be empty 
+
+17)em -rf dir1  --> forcefully remove the directory eventhough it is not empty             
