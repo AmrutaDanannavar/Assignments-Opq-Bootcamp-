@@ -1,0 +1,68 @@
+
+                          LINUX COMMANDS
+
+  18) cd ~/ --> It will go to home directory folder  ('~' this is called tilde)
+
+  19) cp file1 ./directory(where to copy)  --> used to copy the file to a directory .
+
+  20) cp -R dir1 --> this is used to copy the directory.
+
+  21) clear ---> this command is used to  clear console.
+
+  22) cat filename --> this command is used to print the content of the file 
+
+  23) cat -n filename --> this is used to print the content of file along with line number.
+
+  24) mv filename folder(destination) --> used to file from one folder to another folder
+
+  25) mv file1 file2 --> this command is used to rename the file . file 1 is renamed as file2 
+
+  26) echo "hi this is amruta" --> print the message  like hi, this is amruta. 
+
+  27) echo -e "hi / I am amruta"  --> -e is used to print the line to next line 
+     hi
+     I am amruta 
+
+  28) env or printenv  --> used to print environmental variable .
+
+  29) echo $home --> it will print value of home environmental variable.
+
+  30) echo append >>
+
+  31) echo overwrite >
+
+  32) By using semicolon (;) we can execute multiple command 
+      ex: cat user;cd;pwd;echo "hi"
+
+  33) export mysql(variable name)=10.10.10 --> export is used to  set value to environmental   variable.
+
+  34) echo  $mysql --> used to print the value of  variable 
+
+  35) unset mysql --> delete the environmental variable .
+
+  36) wc filename --> wc(word count) --> it will print numberofline,numberofword,numberofcharcters
+
+  37) wc -l filename --> only numberofline
+
+  38) wc -w filename --> only numberofword
+
+  39) wc -c filename --> only numberofcharcters
+
+  40) vi filename --> open the existing  file for editing         
+
+  41) Press 'I' button  to open insert mood 
+
+  42) Press 'escp' come out of the insert mood 
+
+  43) escp + :w --> Save 
+
+  44) escp + :wq --> save and quit 
+
+  45) escp + :q --> quit 
+
+  46) escp + :q! --> quit without save 
+
+  47) touch filename --> Creating empty file  without data.
+
+
+  
