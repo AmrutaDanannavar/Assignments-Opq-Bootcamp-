@@ -1,0 +1,61 @@
+                    
+
+                               LINUX COMMANDS
+
+    48) tail filename --> It will print last 10 lines 
+
+    49) tail -f filename --> Used to Moniter the filename
+
+    50) less filename --> It will  display the content that fits for the screen 
+         Press "spacebutton" for  next page 
+         Press "Q" to come out of it 
+
+    51) head filename --> It will print first 10 lines 
+
+    52) du filename -->  used to find file size 
+
+    53) du -sh filename --> file size in human readable form 
+
+    54) df  filename --> gives  the file system size 
+        df -lh 
+
+               File Modes 
+
+                    drwxrwxrwx                              
+
+                d --> directory         
+                r --> read
+                w --> write 
+                x --> execute 
+     
+        7    rwx    111
+        6    rw     110
+        5    rx     101
+        4    r      100
+        3    wx     011
+        2    w      010
+        1    x      001
+        0    ...    000
+         
+ 55)chmod  ---> command used to  Change the mode of file 
+
+       chmod   7      7    7
+              rwx|   rwx|  rwx 
+              owner| group | others 
+
+ 56)ls -lrt   --> it will display the filename with modes 
+
+ 57) chmod u+rwx filename --> adding read,write,execute permision to user
+    chmod g+rwx filename
+    chmod o+rwx filename
+    chmod ugo+rwx filename
+
+58)chmod u-rwx filename --> removing read,write,execute permision to user 
+
+59) who --> it will provide how many users login into the system 
+
+60) whoami --> it will provide current user
+     exit is used to come out of it 
+
+61) id  ---> brief information about the current user 
+    id root --> brief information about the root user 
