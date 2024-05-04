@@ -1,0 +1,83 @@
+
+
+                            Linux commands 
+
+  86) ps -->Listing Processes
+
+  87) ps -ef --> Listing All Processes in Detailed Format
+
+  88) ps -ef | grep Process name --> Filtering Processes by Name
+
+  89) kill <Processname> --> Terminating a Process by Name
+
+  90) kill -9 <Processname> --> Forcefully Terminating a Process by Name
+
+  91) root user Process ---> Listing Root User Processes
+
+  92) kill pid1 pid2 pid3 --> Terminating Multiple Processes by PID
+
+  93) tar -cvf compressed.tar* ---> Creating a Tar Archive
+
+  94) tar -xvf compressed.tar  --> Extracting Files from a Tar Archive
+
+  95) tar -cvzf compressed.gz* -->This command creates a gzipped tar archive named compressed.gz from all files matching the pattern compressed.gz* in the current directory.
+
+  96) tar -xvzf compressed.gz  -->This command extracts (or unpacks) the contents of the compressed.gz gzip-compressed tar archive in the current directory.
+
+  97) tar -xvzf compressed.gz -C directory --> This command extracts the contents of the compressed.gz archive into the specified directory. 
+
+  98) tar tf comp.gz --> This command lists the contents of the comp.gz gzip-compressed tar archive without extracting them. 
+
+  99) tar tf comp.gz info.txt  -->This command lists whether info.txt exists in the comp.gz archive
+
+  100) -c tar archive ---> -c is used with tar to create a new archive.
+
+  101) -z gz compression ---> This indicates the usage of gzip compression when creating or extracting tar archives using the tar command.
+
+  102) '-j' --> This option is used with tar to specify bzip2 compression when creating or extracting tar archives.
+
+  103)  '-J' --> This option is used with tar to specify xz compression when creating or extracting tar archives.
+
+  104) zip comp.zip --> This command creates a zip archive named comp.zip containing the files specified. It's used for compression and archiving files using the zip format.
+
+  105) unzip comp.zip -d uncop ---> This command extracts the contents of the comp.zip archive into the directory uncop. The -d option specifies the destination directory.
+
+  106) wget --> wget is a command-line utility for downloading files from the internet. It supports downloading via HTTP, HTTPS, and FTP protocols.
+
+  107) wget -b https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf-background---> This command downloads the specified PDF file in the background using wget.
+
+  108) wget -i urls.txt --> This command reads URLs from the urls.txt file and downloads each of them using wget. Each URL should be on a separate line in the file.
+
+  109) wget -O filename https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdfpi-->  This command downloads the specified PDF file and saves it with the name filename.
+
+  110) curl https://google.com --> curl is another command-line utility for transferring data with URLs. This command retrieves the HTML content of the Google homepage.
+
+  111) curl -o google.com https://google.com--> This command downloads the HTML content of the Google homepage and saves it as a file named google.com
+
+  112) curl -O https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf -->This command downloads the specified PDF file using curl and saves it with the same name as in the URL.
+
+  113) ping google.com ---> This command sends ICMP Echo Request messages to the specified host (in this case, google.com) to check if it's reachable and measure the round-trip time.
+
+  114) ping 10.10.120.12 --> This command sends ICMP Echo Request messages to the specified IP address (10.10.120.12) to check its reachability.
+
+  115) Internet Control Message Protocol (ICMP) Echo Request messages--> These are messages sent by the ping command to check the reachability of a host.
+
+  116) ping -c 5 google.com --> This command sends 5 ICMP Echo Request messages to google.com and then stops. The -c option specifies the number of packets to send.
+
+  117) ssh --> ssh (Secure Shell) is a protocol used for secure remote login and command execution on remote machines.
+
+  118) ssh -i linux-class.pem ec2-user@13.201.9.59 -->This command establishes an SSH connection to the host 13.201.9.59 with the username ec2-user, using the private key file linux-class.pem.
+
+  119) reboot --> This command restarts the system.
+
+  120) uniq filename --> This command filters adjacent matching lines from a sorted file and outputs unique lines.
+
+  121) sort filename --> This command sorts the lines of the file filename alphabetically.
+
+  122) sort -r filename --> This command sorts the lines of the file filename in reverse order.
+
+  123) usermod --> This command is used to modify user account properties on a Linux system.
+
+
+
+
