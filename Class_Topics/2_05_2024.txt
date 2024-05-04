@@ -1,0 +1,61 @@
+
+                Linux Commands
+
+   62) useradd username  ---> used to create new user 
+
+   63) passwd password  -----> creating password
+
+   64) passwd -S username ---> password is locked 
+
+   65) su username --> used to switch the user 
+
+   66) useradd -g root username --> -g is used to add user to particular  group
+
+   67) passwd -l username --> password is locked 
+
+   68) passwd -u username --> password is unlocked
+
+   69) cat/etc/group ---> should list the all groups
+
+   70) userdel -r username ---> used to delete the user 
+
+   71) groupadd groupname ---> creating group 
+
+   72) groupdel groupname ---> deleting group 
+
+   73) hostname -i --> ip address 
+
+   74) ifconfig --> display the ip  details of machine we are using 
+
+   75) find ./ -name jack --> used to find files and directory (case sensetive)
+
+   76) find ./ -iname jack --> used to find files and directory ( not case sensetive)  
+
+   77) find ./ -type f -name "jack.pdf" --> used for searching files
+
+   78) find ./ -type d -name  "jack" ----> used for searching directory
+
+   79) touch filename.pdf -->used to create pdf files 
+
+   80) touch filename.txt ---> used to create txt files 
+
+   81) grep ----> this command is used to find words
+
+   82) grep word filename  
+       grep -w vinaya info.txt
+       grep -r vinaya
+       grep -rn vinaya 
+       grep -irn vinaya
+       grep inw vinaya 
+
+   83) ls | grep info 
+     (|) pipe is used to execute multiple Commands at time / used to concatenate) 
+
+   84) file command is used to find which type of file it is 
+       file filename 
+
+   85) ps --->  it will display processes which are running      
+       ps -ef 
+       ps -ef /grep bash 
+       
+                        
