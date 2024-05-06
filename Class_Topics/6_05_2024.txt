@@ -1,0 +1,88 @@
+
+continue part of transaction......
+
+
+ How to  code transaction in mysql workbench :
+
+        START TRANSACTION;
+
+        INSERT INTO your_table (column1, column2) VALUES (value1, value2);
+        UPDATE your_table SET column1 = new_value WHERE condition;
+
+        IF @@ERROR <> 0 THEN
+        ROLLBACK;
+        -- Optionally, handle the error or log it
+       ELSE
+       COMMIT;
+       END IF;
+
+  *)The ROLLBACK statement in SQL is used to undo transactions that have not yet been committed to the database.
+  *)It ensures that any changes made within the transaction are discarded, reverting the database to its state before the transaction began.
+
+                     Isolation levels in SQL 
+
+    *)Isolation levels in SQL define the degree to which transactions are isolated from each    other.  
+    *)isolation levels control how transactions interact with each other and the data they access, aiming to maintain data integrity and prevent 
+
+    There are four standard isolation levels 
+    1.Read Uncommitted
+    2.Read Committed
+    3.Repeatable Read
+    4.Serializable
+
+    1.Read Uncommitted :
+    
+      The Read Uncommitted isolation level is the lowest level of isolation in SQL databases. It allows transactions to read data that has been modified but not yet committed by other transactions. This means that transactions at this isolation level can potentially see "dirty" data, which may later be rolled back by the modifying transaction.                
+
+      Suppose we have a simple database table called Accounts with two columns: AccountID and Balance.
+
+      | AccountID | Balance |
+      |-----------|---------|
+      |     1     |  1000   |
+      |     2     |  2000   |
+
+      Now, let's consider two transactions:
+
+     Transaction 1:
+
+     *)Transaction 1 reads the current balance of AccountID 1, which is 1000.
+     *)Transaction 1 then updates the balance of AccountID 1 to 1500 but does not commit the changes yet.
+
+     Transaction 2:
+
+     *)Transaction 2 reads the balance of AccountID 1 without waiting for Transaction 1 to commit its changes.
+     *)Since Transaction 1 has not committed its changes yet, Transaction 2 reads the "dirty" data and sees the balance as 1500 instead of the original 1000.
+    *)Transaction 2 performs some calculation based on the balance it read.
+ 
+     Scenario:
+
+    *)If Transaction 1 commits its changes, the new balance of AccountID 1 becomes 1500, and Transaction 2's calculation might be based on incorrect data.
+    *)If Transaction 1 rolls back its changes, the new balance of AccountID 1 reverts to 1000, and Transaction 2's calculation might still be based on incorrect data.
+ 
+
+    2.Read Committed:
+
+    The Read Committed isolation level is one level higher than Read Uncommitted and offers better data consistency by ensuring that transactions only read data that has been committed by other transactions. This means it prevents "dirty reads," where a transaction reads data modified by another uncommitted transaction. However, it still allows other anomalies like non-repeatable reads.
+
+    Consider the same scenario with the Accounts table:
+
+    | AccountID | Balance |
+    |-----------|---------|
+    |     1     |  1000   |
+    |     2     |  2000   |
+ 
+    Transaction 1:
+
+    *)Transaction 1 reads the current balance of AccountID 1, which is 1000.
+    *)Transaction 1 then updates the balance of AccountID 1 to 1500 and commits the changes.
+
+    Transaction 2:
+
+    *)Transaction 2 reads the balance of AccountID 1 after Transaction 1 commits its changes.
+    *)Transaction 2 sees the updated balance of 1500.
+    *)Transaction 2 performs some calculation based on the balance it read.
+
+    Scenario:
+
+    *)Transaction 2 reads a committed value of 1500, ensuring that it does not encounter "dirty" data.
+    *)However, if Transaction 1 were to modify the balance again after Transaction 2 reads it, Transaction 2 might encounter a non-repeatable read or phantom read.
