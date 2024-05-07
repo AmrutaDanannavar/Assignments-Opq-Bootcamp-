@@ -1,0 +1,54 @@
+
+
+
+3. Repeatable Read:
+The Repeatable Read isolation level provides a higher level of consistency by ensuring that a transaction sees a consistent snapshot of data throughout its duration. It prevents both dirty reads and non-repeatable reads by locking all rows that are read by a transaction until the transaction is completed.
+
+      | AccountID | Balance |
+      |-----------|---------|
+      |     1     |  1000   |
+      |     2     |  2000   |
+
+
+Transaction 1:
+
+*) Transaction 1 reads the current balance of AccountID 1, which is 1000.
+*) Transaction 1 then updates the balance of AccountID 1 to 1500 but does not commit the changes yet.
+
+Transaction 2:
+
+*) Transaction 2 reads the balance of AccountID 1 after Transaction 1 starts but before Transaction 1 commits its changes.
+*) Transaction 2 sees the balance as 1000, the original value.
+*) Transaction 2 reads the balance again after Transaction 1 commits its changes.
+*) Transaction 2 still sees the balance as 1000, maintaining a consistent snapshot of the data throughout its duration.
+
+Scenario:
+
+*) Transaction 2 sees a consistent snapshot of the data throughout its duration, ensuring that it does not encounter dirty reads or non-repeatable reads.
+
+4. Serializable:
+The Serializable isolation level is the highest level of isolation, providing the strictest form of consistency. It ensures that transactions are completely isolated from each other, preventing dirty reads, non-repeatable reads, and phantom reads by locking not only the rows read by a transaction but also the range of rows that could potentially be affected by concurrent transactions.
+
+      | AccountID | Balance |
+      |-----------|---------|
+      |     1     |  1000   |
+      |     2     |  2000   |
+
+      Transaction 1:
+
+*) Transaction 1 reads the current balance of AccountID 1, which is 1000.
+*) Transaction 1 then updates the balance of AccountID 1 to 1500 and commits the changes.
+
+Transaction 2:
+
+*) Transaction 2 attempts to read the balance of AccountID 1.
+*) Since Transaction 1 has already modified AccountID 1, Transaction 2 is prevented from reading the data until Transaction 1 completes.
+*) Transaction 2 waits until Transaction 1 commits or rolls back.
+*) After Transaction 1 completes, Transaction 2 reads the updated balance of 1500.
+
+Scenario:
+
+*) Transaction 2 is completely isolated from Transaction 1, ensuring strict consistency and preventing any interference between transactions.
+
+
+
