@@ -1,0 +1,124 @@
+
+                        javascript functions 
+    1.Named Functions:
+      These are functions with a specified name and are declared using the function keyword. They can be defined using function declarations or function expressions.
+      
+         Example:
+
+          function namedFunction() {
+             // Function body
+            }
+
+   2.Anonymous Functions:
+     These are functions without a specified name. They are often defined as function expressions and are commonly used as callbacks or immediately invoked function expressions (IIFE).
+
+         Example:
+          var anonymousFunction = function() {
+             // Function body
+           };
+
+   3.Arrow Functions:
+    Arrow functions provide a concise syntax compared to traditional function expressions and lexically bind the this value.        
+       
+        Example:
+          var arrowFunction = () => {
+          // Function body
+        };
+
+   4.Higher-Order Functions:
+     These are functions that take other functions as arguments or return functions. They are often used for functional programming paradigms.
+
+         Example:
+         function higherOrderFunction(callback) {
+           // Function body
+           callback();
+          }
+     
+
+
+    
+// find area ,circufurance and diameter  of the circle for the given set of radius
+let array = [1,2,3,4,5];
+
+function calculateArea(radius){
+    let result =[];
+    for(let i =0;i< radius.length;i++){
+        result.push(3.142*radius[i]*radius[i]);
+    }
+    return result;
+}
+function calculateCircumfurance(radius){
+    let result =[];
+    for(let i =0;i< radius.length;i++){
+        result.push(2*3.142*radius[i]);
+    }
+    return result;
+}
+function calculateDiameter(radius){
+    let result =[];
+    for(let i =0;i< radius.length;i++){
+        result.push(2*radius[i]);
+    }
+    return result;
+}
+
+let resultArea =calculateArea(array);
+let resultCircumfurance = calculateCircumfurance(array);
+let resultDiameter =calculateDiameter(array);
+console.log(resultArea);
+console.log(resultCircumfurance);
+console.log(resultDiameter);
+
+
+//// find area ,circufurance and diameter  of the circle for the given set of radius using arrow function 
+
+let array =[1,2,3,4,5];
+function calculate_metric(array,logic){
+    let result=[];
+    for (let i=0;i<array.length;i++){
+        result.push(logic(array[i]));
+    }
+    return result;
+}
+let calculateArea = (radius)=>{return 3.142*radius*radius}
+let calculateCircumfurance = (radius)=>{return 2*3.142*radius}
+let calculateDiameter = (radius)=>{return 2*radius}
+
+console.log(calculate_metric(array,calculateArea));
+console.log(calculate_metric(array,calculateCircumfurance));
+console.log(calculate_metric(array,calculateDiameter));
+    
+	 some standard heigher order builtin functions 
+	 
+	 1. forEach(): Executes a provided function once for each array element.
+	  example:
+	  var arr = [1, 2, 3];
+      arr.forEach(function(item) {
+         console.log(item); // Output: 1, 2, 3
+        });
+
+     2.map(): Applies a function to each element of an array and returns a new array with the results.
+         example:
+         var numbers = [1, 2, 3, 4, 5];
+         var doubled = numbers.map(function(num) {
+          return num * 2;
+         });
+         console.log(doubled); // Output: [2, 4, 6, 8, 10]		 
+   
+     3.filter():Creates a new array with all elements that pass the test implemented by the provided function
+	    example:
+		
+		var numbers = [1, 2, 3, 4, 5];
+        var evens = numbers.filter(function(num) {
+        return num % 2 === 0;
+        });
+       console.log(evens); // Output: [2, 4]
+
+	 4.reduce():Executes a reducer function on each element of the array, resulting in a single output value.
+	    example:
+		
+		var numbers = [1, 2, 3, 4, 5];
+        var sum = numbers.reduce(function(accumulator, currentValue) {
+        return accumulator + currentValue;
+        }, 0);
+        console.log(sum); // Output: 15 (1 + 2 + 3 + 4 + 5)
