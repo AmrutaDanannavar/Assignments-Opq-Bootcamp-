@@ -1,0 +1,95 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title> HTML class 1</title>
+    </head>
+
+    <body>
+            Nithin Shivanna
+            <!-- <Tags that help to display headings> -->
+            <h1 > Cric Info </h1>
+            <!-- <Paragraph> -->
+            <!-- <p> This is a test paragraph </p>
+            <h2> heading 2 </h2>
+            <h3> heading 2 </h3>
+            <h4> heading 2 </h4>
+            <h5> heading 2 </h5>
+            <h6> heading 2 </h6> -->
+            <!-- Linking pages -->
+            <a href="https://www.google.com"> Redirect me to this page </a>
+             <!-- Images display -->
+            <!-- <img src="./Golden_Retriever_Dukedestiny01_drvd.jpg" alt="this is a dog's image"> -->
+
+            <!-- Listing the items as one unit in an ordered way -->
+            <!-- <ol>
+                <li> Apple </li>
+                <li> Tooth Paste </li>
+                <li> Soap </li>
+            </ol> -->
+
+            <!-- Unordered list -->
+            <!-- <ul>
+                <li> Apple </li>
+                <li> Tooth Paste </li>
+                <li> Soap </li>
+            </ul> -->
+
+            <!-- Inline Tags -->
+            <span> OpqTech </span>
+            <a href="https://www.google.com"> Google</a>
+            <!-- Block tags -->
+
+
+
+            <h1> Personal Information form </h1>
+            <form>
+                <div>
+                    <label> Name </label>
+                    <input  type="text">
+                </div>
+                <div>
+                    <label> Email </label>
+                    <input type="email">
+                </div>
+                <div>
+                    <label> Phone </label>
+                    <input type="number">
+                </div>
+                <div>
+                    <label> DOB </label>
+                    <input type="date">
+                </div>
+
+                <div>
+                    <p>Fav Food</p>
+                    <label> Apple </label>
+                    <input type="checkbox">
+
+                    <label> Pizza </label>
+                    <input type="checkbox">
+                    <label> Burger </label>
+                    <input type="checkbox">
+                </div>
+                
+                <p> Gender </p>
+                <label> Male </label>
+                <input type="radio" name="gender">
+                <label> Female</label>
+                <input type="radio" name="gender">
+
+                <label> EyeColor </label>
+                <select>
+                    <option> Black</option>
+                    <option> Brown</option>
+                    <option> Red</option>
+                </select>
+
+                <label> Password</label>
+                <input type="password">
+                <button type="submit"> Submit</button>
+            </form>
+
+    </body>
+
+</html>
