@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title> Background </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        div {
+            /* background-color: red; */
+            background-image: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        p {
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: underline;
+            /* word-spacing: 100px; */
+            color: blueviolet;
+            text-align: center;
+        }
+
+         .mycontainer{
+            background-color: brown;
+            color: black
+         }
+
+         #content1{
+           text-align: left;
+         }
+
+    </style>
+</head>
+
+<body>
+
+    <div>
+
+        <h1>Lorem ipsum dolor sit.</h1>
+        <h1>Lorem ipsum dolor sit.</h1>
+        <h1>Lorem ipsum dolor sit.</h1>
+        <h1>Lorem ipsum dolor sit.</h1>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fuga atque, rerum voluptatum quam nesciunt
+        quia quasi itaque officia omnis quas reprehenderit perferendis consequuntur pariatur impedit autem unde
+        mollitia voluptates?</p>
+
+    <div>
+
+        <p class="mycontainer" id="content1">I am a different container</p>
+    </div>
+
+</body>
+
+</html>
