@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title> Personal Portfolio</title>
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <img src="./images/logo.png" width="50px">
+            <div>
+                <a href="#"> Home </a>
+                <a href="#"> About </a>
+                <a href="#"> Projects </a>
+                <a href="#"> Blog </a>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <main>
+        <img src="./images/profile.jpg" width="200px">
+        <h4> Robert </h4>
+        <h1> I am a frontend developer</h1>
+        <p>
+            This is a Random Description
+        </p>
+        <button> Download Resume </button>
+        <section>
+            <h4>About Me</h4>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis cum quibusdam dolorem quia cumque
+                aspernatur laboriosam delectus ullam nobis, libero non ipsa eum sint deserunt, illum veritatis porro
+                perferendis similique.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#"> <img src="./images/github logo.png" width="40px"> </a>
+        <a href="#"> <img src="./images/leet logo.png" width="40px"> </a>
+        <a href="#"> <img src="./images/twitter logo.png" width="40px"> </a>
+    </footer>
+
+</body>
+
+</html>
