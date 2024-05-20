@@ -1,0 +1,51 @@
+header{
+    background-color: #ffc93c;
+    height: 60px;
+    padding-top: 10px;
+    position: sticky;
+    
+}
+ul{
+    display: flex;
+    gap: 50px;
+    justify-content: right;
+    padding-right: 20px;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+    
+}
+a:hover{
+    background-color: antiquewhite;
+}
+
+#movieslist{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    padding-top: 20px;
+    
+  }
+  th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    background-color: cornflowerblue;
+}
+  td{
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  h1{
+    text-align: center;
+    
+  }
+
+

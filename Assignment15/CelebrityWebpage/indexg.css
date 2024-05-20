@@ -1,0 +1,41 @@
+header{
+    background-color: #ffc93c;
+    height: 60px;
+    padding-top: 10px;
+    position: sticky;
+}
+ul{
+    display: flex;
+    gap: 50px;
+    justify-content: right;
+    padding-right: 20px;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+    
+}
+a:hover{
+    background-color: antiquewhite;
+}
+img{
+    height: 300px;
+    width: 230px;
+    border: 5px solid black;
+    
+}
+.images{
+    padding-left: 30px;
+    padding-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+
