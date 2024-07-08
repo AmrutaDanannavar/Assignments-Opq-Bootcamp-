@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>React-1st-class</title>
+</head>
+<style>
+    #players{
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        color: white;
+    }
+</style>
+
+<body>
+    <div id="players">
+
+    </div>
+    <div id="container">
+
+    </div>
+
+</body>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script>
+     
+            let child1 = React.createElement('div', { id: 'child' }, "I am child1");
+            let child2 = React.createElement('div', { id: 'child' }, "I am child2");
+
+            let maincomponent = React.createElement('div', { id: 'parent' }, [child1,child2]);
+
+            let rootElement = ReactDOM.createRoot(document.querySelector('#players'))
+
+            rootElement.render(maincomponent)
+</script>
+
+</html>
