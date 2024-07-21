@@ -1,0 +1,33 @@
+{
+    "movies": [
+      {
+        "name": "Appu",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNzUd1L0bypVeWnU488J9crXA32p9tT3xdulVieTYtOSNXtJc3ORlZnU50MQ&s"
+      },
+      {
+        "name": "Raajakumara",
+        "image": "data:image/webp;base64,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"
+      },
+      {
+        "name": "Milana",
+        "image": "https://example.com/images/milana.jpg"
+      },
+      {
+        "name": "Anjani Putra",
+        "image": "https://example.com/images/anjani-putra.jpg"
+      },
+      {
+        "name": "Natasaarvabhowma",
+        "image": "https://example.com/images/natasaarvabhowma.jpg"
+      },
+      {
+        "name": "Jackie",
+        "image": "https://example.com/images/jackie.jpg"
+      },
+      {
+        "name": "Vamshi",
+        "image": "https://example.com/images/vamshi.jpg"
+      }
+    ]
+  }
+  
